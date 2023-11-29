@@ -12,7 +12,7 @@ class TaskController extends Controller
     function index()
     {
         $tasks = Task::all();//tasksテーブルから全てのデータをとってくる
-        return view('tasks.index',compact('task'));
+        return view('index',compact('tasks'));
     }
 
     function create()

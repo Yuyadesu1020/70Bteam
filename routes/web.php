@@ -17,10 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/show', function () {
-    return view('show');
+Route::get('/index', function () {
+    return view('index');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/show', [App\Http\Controllers\TweetController::class, 'showTimelinePage'])->name('timeline');

@@ -13,6 +13,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Move_on</a>
+          <!-- Right Side Of Navbar -->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -25,9 +26,6 @@
                 <a class="nav-link" href="#">+post</a>
               </li>
             </ul>
-          </div>
-          <!-- Right Side Of Navbar -->
-          <div>
             <ul class="navbar-nav ms-auto">
               <!-- Authentication Links -->
               @guest
@@ -123,14 +121,28 @@
           {{-- {{ Auth::user()->name }} --}}
           <a href="">testname</a>
         </div>
+
         <div class="postcontent list">何するのかを書く</div>
-        <div class="card-img list">
+
+        <div class="tweet-box">
+          <a href="#"><img src="../image/samplepic.jpg" alt=""><!--asset内のstorage/imagesを取り、$tweet,user,avatarという順で中に入りavatar内の写真を取得--></a>
+
+        <div class="destroy-btn">
+          {{-- @if($tweet->user_id == Auth::user()->id) <!--if,tweetユーザーが今の使用ユーザーと同じの時--> --}}
+            <form action="#" method="post">
+              @csrf
+              <input type="submit" value="削除">
+            </form>
+          {{-- @endif --}}
+        </div>
+      </div>
+        {{-- <div class="card-img list">
           <label for="postimage" class="imagine">{{ __('プロフィール画像（サイズは1024Kbteまで）') }}</label>
-          <div class="show">
+          <div class="show"> --}}
 
             {{-- 写真ファイル選択 --}}
-            <input type="file" id="postimage"  name="postimage">
-          </div>
+            {{-- <input type="file" id="postimage"  name="postimage">
+          </div> --}}
         </div>
     </div>
         </form>

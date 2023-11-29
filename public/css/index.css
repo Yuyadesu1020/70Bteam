@@ -1,0 +1,18 @@
+body{
+    height: 100%;
+}
+.pageface{
+   background-color: rgb(156, 225, 156, 0.4);
+   height: 100vh;
+}
+.card-boxes{
+    
+    border: 1px solid black;
+    width: 45vw;
+    height: 50vh;
+    margin-left: 60px;
+}
+.list{
+    padding-top: 30px;
+    padding-left: 40px;
+}

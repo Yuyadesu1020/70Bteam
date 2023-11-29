@@ -9,29 +9,38 @@ use App\Models\Task;
 class TaskController extends Controller
 {
     //
-    function showTimelinePage()
+    function index()
     {
-        $tweets=Tweet::latest()->simplepaginate(3);//0の方に最新のデータをとってくる
-        return view('timeline',['tweets'=>$tweets]);
+
     }
 
-    function postTweet(Request $request)
+    function create()
     {
-        $validator=$request->validate([
-            'tweet'=>['required','string','max:280',]
-        ]);
-        Tweet::create([
-            'user_id'=>Auth::user()->id,
-            'tweet'=>$request->tweet,
-        ]);
-        return back();
+
+    }
+
+    function store(Request $request)
+    {
+
+    }
+
+    function show($id)
+    {
+
+    }
+
+    function edit($id)
+    {
+
+    }
+
+    function update(Request $request)
+    {
+
     }
 
     function destroy($id)
     {
-        $tweet=Tweet::find($id);
-        $tweet->delete();
-
-        return redirect()->route('timeline');
+        
     }
 }

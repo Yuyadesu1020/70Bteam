@@ -8,10 +8,13 @@ use App\Models\User;
 class UserController extends Controller
 {
     //
-    function show($id)
+    function store(Request $request)
     {
-        $user=User::find($id);
 
-        return view('profile',['user'=>$user]);
+    }
+
+    function destroy(Request $request)
+    {
+        
     }
 }

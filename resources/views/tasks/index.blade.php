@@ -75,6 +75,7 @@
                 {{-- {{ Auth::user()->name }} --}}
                 <a href="">testname</a>
               </div>
+              
             
             <div class="postcontents">
               <div class="postcontent list">何するのかを書く</div>

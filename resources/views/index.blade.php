@@ -85,6 +85,54 @@
                 </div>
               </div>
           </div>
+
+          <div class="card-boxes">
+            <div class="username list">
+              {{-- {{ Auth::user()->name }} --}}
+              <a href="">testname</a>
+            </div>
+            <div class="postcontent list">何するのかを書く</div>
+            <div class="card-img list">
+              <label for="postimage" class="imagine">{{ __('プロフィール画像（サイズは1024Kbteまで）') }}</label>
+              <div class="show">
+
+                {{-- 写真ファイル選択 --}}
+                <input type="file" id="postimage"  name="postimage">
+              </div>
+            </div>
+        </div>
+
+        <div class="card-boxes">
+          <div class="username list">
+            {{-- {{ Auth::user()->name }} --}}
+            <a href="">testname</a>
+          </div>
+          <div class="postcontent list">何するのかを書く</div>
+          <div class="card-img list">
+            <label for="postimage" class="imagine">{{ __('プロフィール画像（サイズは1024Kbteまで）') }}</label>
+            <div class="show">
+
+              {{-- 写真ファイル選択 --}}
+              <input type="file" id="postimage"  name="postimage">
+            </div>
+          </div>
+      </div>
+
+      <div class="card-boxes">
+        <div class="username list">
+          {{-- {{ Auth::user()->name }} --}}
+          <a href="">testname</a>
+        </div>
+        <div class="postcontent list">何するのかを書く</div>
+        <div class="card-img list">
+          <label for="postimage" class="imagine">{{ __('プロフィール画像（サイズは1024Kbteまで）') }}</label>
+          <div class="show">
+
+            {{-- 写真ファイル選択 --}}
+            <input type="file" id="postimage"  name="postimage">
+          </div>
+        </div>
+    </div>
         </form>
       </div>
     </div>

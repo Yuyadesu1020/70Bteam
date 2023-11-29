@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>moveon</title>
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">  
+    <link href="https://use.fontawesome.com/releases/v6.5.0/css/all.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -73,13 +74,21 @@
                 {{-- {{ Auth::user()->name }} --}}
                 <a href="">testname</a>
               </div>
-              <div class="postcontent list">何するのかを書く</div>
-              <div class="card-img list">
-                <label for="postimage" class="imagine">{{ __('プロフィール画像（サイズは1024Kbteまで）') }}</label>
-                <div class="show">
 
-                  {{-- 写真ファイル選択 --}}
-                  <input type="file" id="postimage"  name="postimage">
+              <div class="postcontent list">何するのかを書く
+                <a href=""><i class="far fa-thumbs-up"></i></a>
+                <a href=""><i class="fa-regular fa-thumbs-up fa-rotate-180"></i></a>
+              </div>
+              
+              
+              <div class="move-box">
+                <a href="#"><img src="../image/samplepic.jpg" alt="" class="samplepic"></a>
+
+                <div class="destroy-btn">
+                    <form action="#" method="post">
+                      @csrf
+                      <input type="submit" value="削除">
+                    </form>
                 </div>
               </div>
           </div>
@@ -89,13 +98,17 @@
               {{-- {{ Auth::user()->name }} --}}
               <a href="">testname</a>
             </div>
-            <div class="postcontent list">何するのかを書く</div>
-            <div class="card-img list">
-              <label for="postimage" class="imagine">{{ __('プロフィール画像（サイズは1024Kbteまで）') }}</label>
-              <div class="show">
 
-                {{-- 写真ファイル選択 --}}
-                <input type="file" id="postimage"  name="postimage">
+            <div class="postcontent list">何するのかを書く</div>
+            
+            <div class="move-box">
+              <a href="#"><img src="../image/samplepic.jpg" alt="" class="samplepic"></a>
+    
+              <div class="destroy-btn">
+                  <form action="#" method="post">
+                    @csrf
+                    <input type="submit" value="削除">
+                  </form>
               </div>
             </div>
         </div>
@@ -105,13 +118,17 @@
             {{-- {{ Auth::user()->name }} --}}
             <a href="">testname</a>
           </div>
-          <div class="postcontent list">何するのかを書く</div>
-          <div class="card-img list">
-            <label for="postimage" class="imagine">{{ __('プロフィール画像（サイズは1024Kbteまで）') }}</label>
-            <div class="show">
 
-              {{-- 写真ファイル選択 --}}
-              <input type="file" id="postimage"  name="postimage">
+          <div class="postcontent list">何するのかを書く</div>
+
+          <div class="move-box">
+            <a href="#"><img src="../image/samplepic.jpg" alt="" class="samplepic"></a>
+  
+            <div class="destroy-btn">
+                <form action="#" method="post">
+                  @csrf
+                  <input type="submit" value="削除">
+                </form>
             </div>
           </div>
       </div>
@@ -124,18 +141,16 @@
 
         <div class="postcontent list">何するのかを書く</div>
 
-        <div class="tweet-box">
-          <a href="#"><img src="../image/samplepic.jpg" alt=""><!--asset内のstorage/imagesを取り、$tweet,user,avatarという順で中に入りavatar内の写真を取得--></a>
+        <div class="move-box">
+          <a href="#"><img src="../image/samplepic.jpg" alt="" class="samplepic"></a>
 
-        <div class="destroy-btn">
-          {{-- @if($tweet->user_id == Auth::user()->id) <!--if,tweetユーザーが今の使用ユーザーと同じの時--> --}}
-            <form action="#" method="post">
-              @csrf
-              <input type="submit" value="削除">
-            </form>
-          {{-- @endif --}}
+          <div class="destroy-btn">
+              <form action="#" method="post">
+                @csrf
+                <input type="submit" value="削除">
+              </form>
+          </div>
         </div>
-      </div>
         {{-- <div class="card-img list">
           <label for="postimage" class="imagine">{{ __('プロフィール画像（サイズは1024Kbteまで）') }}</label>
           <div class="show"> --}}
@@ -143,7 +158,6 @@
             {{-- 写真ファイル選択 --}}
             {{-- <input type="file" id="postimage"  name="postimage">
           </div> --}}
-        </div>
     </div>
         </form>
       </div>

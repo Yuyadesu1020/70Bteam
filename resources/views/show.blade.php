@@ -65,12 +65,31 @@
           </div>
         </div>
     </nav>
-    <div class="card-boxes">
+    <div class="pageface">
       <div class="card-head" style="opacity: 0.7">To do</div>
-        <div class="post">
-          <a href=""></a>
-        </div>
+        <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+          @csrf
+
+          <div class="card-boxes">
+              <div class="username">
+                {{-- {{ Auth::user()->name }} --}}
+                <a href="">testname</a>
+              </div>
+              <div class="postcontent">何するのかを書く</div>
+              <div class="card-img">
+                <label for="postimage" class="imagine">{{ __('プロフィール画像（サイズは1024Kbteまで）') }}</label>
+                <div class="show">
+
+                  {{-- 写真ファイル選択 --}}
+                  <input type="file" id="postimage"  name="postimage">
+
+                </div>
+              </div>
+          </div>
+        </form>
+      </div>
     </div>
+   
       
 </body>
 </html>

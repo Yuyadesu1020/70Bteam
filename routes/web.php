@@ -25,4 +25,28 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/tasks', [App\Http\Controllers\PostController::class, 'index'])->name('tasks.index');
+//taskのRoute
+Route::get('/tasks', [App\Http\Controllers\TaskController::class, 'index'])->name('tasks.index');
+
+Route::get('/tasks/create', [App\Http\Controllers\TaskController::class, 'create'])->name('tasks.create');
+
+Route::post('/tasks', [App\Http\Controllers\TaskController::class, 'store'])->name('tasks.store');
+
+Route::get('/tasks/{id}', [App\Http\Controllers\TaskController::class, 'show'])->name('tasks.show');
+
+Route::get('/tasks/{id}/edit', [App\Http\Controllers\TaskController::class, 'edit'])->name('tasks.edit');
+
+Route::put('/tasks/{id}', [App\Http\Controllers\TaskController::class, 'update'])->name('tasks.update');
+
+Route::delete('/tasks/{id}', [App\Http\Controllers\TaskController::class, 'destroy'])->name('tasks.destroy');
+
+Route::post('/tasks/{task_id}/upload-image', [App\Http\Controllers\TaskController::class, 'uploadImage'])->name('tasks.upload-image');
+
+//likeのRoute
+Route::get('/tasks/{task_id}/likes', [App\Http\Controllers\LikeController::class, 'store'])->name('likes.store');
+
+Route::delete('/likes/{like_id}', [App\Http\Controllers\LikeController::class, 'destroy'])->name('likes.destroy');
+
+//userのRoute
+Route::get('/user/show{id}', [App\Http\Controllers\UserController::class, 'show'])->name('show');
+

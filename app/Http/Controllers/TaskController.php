@@ -43,4 +43,9 @@ class TaskController extends Controller
     {
         
     }
+
+    function uploadImage(Request $request,$task_id)
+    {
+        
+    }
 }

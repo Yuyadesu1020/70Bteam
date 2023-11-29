@@ -8,12 +8,7 @@ use App\Models\User;
 class UserController extends Controller
 {
     //
-    function store(Request $request)
-    {
-
-    }
-
-    function destroy(Request $request)
+    function show($id)
     {
         
     }

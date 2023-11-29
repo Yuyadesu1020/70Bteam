@@ -10,6 +10,8 @@ class UserController extends Controller
     //
     function show($id)
     {
-        
+        $user=User::find($id);
+
+        return view('tasks.profile',['user'=>$user]);
     }
 }

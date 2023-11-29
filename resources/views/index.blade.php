@@ -66,7 +66,7 @@
         </div>
     </nav>
     <div class="pageface">
-      <div class="card-head" style="opacity: 0.7">What to do</div>
+      <div class="card-head" style="opacity: 0.7">? What to do ?</div>
         <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
           @csrf
 

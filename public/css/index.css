@@ -5,12 +5,18 @@ body{
    background-color: rgb(156, 225, 156, 0.4);
    height: 100vh;
 }
+.card-head{
+    font-size: 50px;
+    text-align: center;
+    margin: 30px;
+    padding-top: 40px;
+    letter-spacing: 10px;
+}
 .card-boxes{
-    
     border: 1px solid black;
     width: 45vw;
     height: 50vh;
-    margin-left: 60px;
+    margin: 0 auto;
 }
 .list{
     padding-top: 30px;

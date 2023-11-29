@@ -9,4 +9,13 @@ use App\Models\Like;
 class LikeController extends Controller
 {
     //
+    function store(Request $request)
+    {
+
+    }
+
+    function destroy(Request $request)
+    {
+        
+    }
 }

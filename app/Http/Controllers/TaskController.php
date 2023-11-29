@@ -9,4 +9,38 @@ use App\Models\Task;
 class TaskController extends Controller
 {
     //
+    function index()
+    {
+
+    }
+
+    function create()
+    {
+
+    }
+
+    function store(Request $request)
+    {
+
+    }
+
+    function show($id)
+    {
+
+    }
+
+    function edit($id)
+    {
+
+    }
+
+    function update(Request $request)
+    {
+
+    }
+
+    function destroy($id)
+    {
+        
+    }
 }

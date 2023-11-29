@@ -8,4 +8,7 @@ use App\Models\User;
 class UserController extends Controller
 {
     //
+    function show($id) {
+        
+    }
 }

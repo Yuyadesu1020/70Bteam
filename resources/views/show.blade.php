@@ -65,6 +65,12 @@
           </div>
         </div>
     </nav>
+    <div class="card-boxes">
+      <div class="card-head" style="opacity: 0.7">To do</div>
+        <div class="post">
+          <a href=""></a>
+        </div>
+    </div>
       
 </body>
 </html>

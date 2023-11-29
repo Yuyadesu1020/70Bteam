@@ -11,7 +11,7 @@ class TaskController extends Controller
     //
     function index()
     {
-
+        return view('index');
     }
 
     function create()

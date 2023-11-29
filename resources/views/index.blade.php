@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>moveon</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
@@ -66,23 +66,22 @@
         </div>
     </nav>
     <div class="pageface">
-      <div class="card-head" style="opacity: 0.7">To do</div>
+      <div class="card-head" style="opacity: 0.7">What to do</div>
         <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
           @csrf
 
           <div class="card-boxes">
-              <div class="username">
+              <div class="username list">
                 {{-- {{ Auth::user()->name }} --}}
                 <a href="">testname</a>
               </div>
-              <div class="postcontent">何するのかを書く</div>
-              <div class="card-img">
+              <div class="postcontent list">何するのかを書く</div>
+              <div class="card-img list">
                 <label for="postimage" class="imagine">{{ __('プロフィール画像（サイズは1024Kbteまで）') }}</label>
                 <div class="show">
 
                   {{-- 写真ファイル選択 --}}
                   <input type="file" id="postimage"  name="postimage">
-
                 </div>
               </div>
           </div>

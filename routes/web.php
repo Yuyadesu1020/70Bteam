@@ -24,3 +24,5 @@ Route::get('/show', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/show', [App\Http\Controllers\TweetController::class, 'showTimelinePage'])->name('timeline');

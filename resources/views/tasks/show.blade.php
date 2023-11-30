@@ -24,7 +24,7 @@
                 <a class="nav-link active" aria-current="page" href="#">profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">post</a>
+                <a class="nav-link" href="{{ route('tasks.create') }}">post</a>
               </li>
               <li>
                 <a class="nav-link" href="#">edit</a>

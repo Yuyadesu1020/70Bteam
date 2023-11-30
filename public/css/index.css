@@ -53,6 +53,10 @@ body{
     padding-right: 10px;
 }
 
+.count{margin-left: 10px;
+
+}
+
 .far{
     display: flex;
     flex-direction: row;

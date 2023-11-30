@@ -11,7 +11,7 @@ body{
 .edit-box{
     border: 1px solid rgb(0,0,0,0.3);
     border-radius: 30px;
-    width: 70vw;
+    width: 80vw;
     height: 50vh;
     background-color: rgb(250,240,230,0.9);
     margin: 0 auto 0 auto;
@@ -21,12 +21,14 @@ body{
     text-align: center;
     border-bottom: 1px solid rgb(0,0,0,0.3);
     height: 70px;
-    padding-top: 20px;
+    padding-top: 15px;
 }
 
 .change-title{
     border: 1px solid rgb(0,0,0,0.2);
     background-color: rgb(250,240,230,0.9);
+    height: 40px;
+    width: 25vw;
 }
 
 .label-title{
@@ -56,5 +58,10 @@ textarea{
 }
 
 .btn-block{
-    text-align: center;
+    margin: 40px 170px 0 auto;
+    border: 1px solid rgb(0, 0, 0, 0.4);
+    border-radius: 10px;
+    width: 83px;
+    background-color:lemonchiffon;
 }
+

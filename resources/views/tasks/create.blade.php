@@ -65,7 +65,7 @@
         </div>
     </nav>
     <div class="create-form">
-        <form action="{{ route('tasks.store') }}" method="POST">
+        <form action="{{ route('tasks.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="title">
                 <label for="">Title</label>

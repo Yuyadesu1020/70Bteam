@@ -1,0 +1,58 @@
+body{
+   height: 100%;
+   margin: 0;
+   padding: 0;
+}
+
+.own-card{
+    background-color: rgba(161, 231, 231, 0.3);
+    height: 290vh;
+    padding-top: 120px;
+}
+
+.card{
+    border: 1px solid rgb(0,0,0,0.3);
+    border-radius: 30px;
+    width: 70vw;
+    height: 50vh;
+    margin: 0 auto 0 auto;
+}
+
+.show-title{
+    border: 1px solid rgb(0,0,0,0.2);
+    background-color: rgb(250,240,230,0.9);
+    height: 40px;
+    margin-bottom: 0;
+}
+
+.card-middle{
+    border: 1px solid rgb(0,0,0,0.2);
+    background-color: rgb(250,240,230,0.9);
+    height: 90px;
+    margin-bottom: 0;
+}
+
+.card-out{
+    /* border: 1px solid black; */
+    width: 70%;
+    display: flex;
+    margin: 20px auto 0 auto;
+    gap: 30px;
+}
+
+.like{
+    margin-top: 90px;
+}
+
+
+
+
+.show-img{
+    width: 120px;
+    height: 120px;
+}
+
+div > .comment-box{
+    width: 60vw;
+    margin-top: 90px;
+}

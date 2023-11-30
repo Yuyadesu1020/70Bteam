@@ -27,7 +27,7 @@
                 <a class="nav-link" href="{{ route('tasks.create') }}">post</a>
               </li>
               <li>
-                <a class="nav-link" href="#">edit</a>
+                <a class="nav-link" href="{{ route('tasks.edit',$task->id) }}">edit</a>
               </li>
               <li>
                 <form action='' method='post'>
@@ -77,39 +77,44 @@
         </div>
     </nav>
     <div class="own-card">
-        <div class="card-header">
-            <h4><!--現在は（仮）、userの打ち込んだタイトル-->{{ $task->title }}</h4>
+        <div class="card">
+            <h4 class="show-title"><!--タイトルルート完了-->{{ $task->title }}</h4>
 
             <p class="card-middle">{{ $task->body }}</p>
+        </div>
+        <div class="card-out">
+          <div class="img-box">
+            <img class="show-img" src="{{ asset($task->file_path) }}" alt="投稿の画像">
+          </div>
+          <div class="like">
+              <a href=""><i class="far fa-thumbs-up"></i></a>
+              <a href=""><i class="fa-regular fa-thumbs-up fa-rotate-180"></i></a>
+          </div>
+        </div>
 
-            <img src="{{ asset($task->file_path) }}" alt="投稿の画像">
-            <div class="like">
-                <a href=""><i class="far fa-thumbs-up"></i></a>
-                <a href=""><i class="fa-regular fa-thumbs-up fa-rotate-180"></i></a>
+        <div class="comment-box">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                    <button type="button" class="btn btn-primary" onclick="location.href=''">comment</button>
+                    {{-- {{ route('comments.create', $tasks->id) }} --}}
             </div>
-
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                        <button type="button" class="btn btn-primary" onclick="location.href=''">comment</button>
-                        {{-- {{ route('comments.create', $tasks->id) }} --}}
-                </div>
-              </div>
-              <div class="row justify-content-center">
-                <div class="col-md-8 mt-5">
-                  comment list
-                  {{-- @foreach($tasks->comments as $comment) --}}
-                    <div class="card mt-3">
-                        <h5 class="card-header">poster：</h5>
-                        {{-- {{ $comment->user->name }} --}}
-                        <div class="card-body">
-                            <p class="card-text"></p>
-                            {{-- {{ $comment->body }} --}}
-                            <p class="card-title">created at：</p>
-                            {{-- {{ $comment->created_at }} --}}
-                        </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-8 mt-5">
+              comment list
+              {{-- @foreach($tasks->comments as $comment) --}}
+                <div class="card mt-3">
+                    <h5 class="card-header">poster：</h5>
+                    {{-- {{ $comment->user->name }} --}}
+                    <div class="card-body">
+                        <p class="card-text"></p>
+                        {{-- {{ $comment->body }} --}}
+                        <p class="card-title">created at：</p>
+                        {{-- {{ $comment->created_at }} --}}
                     </div>
-                  {{-- @endforeach --}}
                 </div>
+              {{-- @endforeach --}}
+            </div>
         </div>
     </div>
 </body>

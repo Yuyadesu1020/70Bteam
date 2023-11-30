@@ -49,7 +49,7 @@ Route::post('/tasks/{task_id}/upload-image', [App\Http\Controllers\TaskControlle
 //likeのRoute
 Route::get('/tasks/{task_id}/likes', [App\Http\Controllers\LikeController::class, 'store'])->name('likes.store');
 
-Route::delete('/likes/{like_id}', [App\Http\Controllers\LikeController::class, 'destroy'])->name('likes.destroy');
+Route::get('/likes/{like_id}', [App\Http\Controllers\LikeController::class, 'destroy'])->name('likes.destroy');
 
 //userのRoute
 Route::get('/user/show{id}', [App\Http\Controllers\UserController::class, 'show'])->name('show');

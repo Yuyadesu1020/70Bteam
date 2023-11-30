@@ -1,0 +1,60 @@
+body{
+    height: 100%;
+}
+
+.edit-page{
+    background-color: rgba(161, 231, 231, 0.3);
+    height: 93vh;
+    padding-top: 120px;
+}
+
+.edit-box{
+    border: 1px solid rgb(0,0,0,0.3);
+    border-radius: 30px;
+    width: 70vw;
+    height: 50vh;
+    background-color: rgb(250,240,230,0.9);
+    margin: 0 auto 0 auto;
+}
+
+.edit-title{
+    text-align: center;
+    border-bottom: 1px solid rgb(0,0,0,0.3);
+    height: 70px;
+    padding-top: 20px;
+}
+
+.change-title{
+    border: 1px solid rgb(0,0,0,0.2);
+    background-color: rgb(250,240,230,0.9);
+}
+
+.label-title{
+    font-size: 20px;
+}
+
+.edit-content{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+    margin: 30px 0px 90px 150px;
+    /* border-bottom: 1px solid rgb(0,0,0,0.3); */
+}
+
+textarea{
+    border: 1px solid rgb(0,0,0,0.2);
+    background-color: rgb(250,240,230,0.9);
+    width: 70%;
+    height: 30vh;
+    
+}
+
+.label-content{
+    font-size: 20px;
+    margin-right: 39px;
+}
+
+.btn-block{
+    text-align: center;
+}

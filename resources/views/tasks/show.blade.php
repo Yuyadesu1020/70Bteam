@@ -78,10 +78,11 @@
     </nav>
     <div class="own-card">
         <div class="card-header">
-            <h4>Title<!--現在は（仮）、userの打ち込んだタイトル--></h4>
+            <h4><!--現在は（仮）、userの打ち込んだタイトル-->{{ $task->title }}</h4>
 
-            <p class="card-middle">post-content</p>
+            <p class="card-middle">{{ $task->body }}</p>
 
+            <img src="{{ asset($task->file_path) }}" alt="投稿の画像">
             <div class="like">
                 <a href=""><i class="far fa-thumbs-up"></i></a>
                 <a href=""><i class="fa-regular fa-thumbs-up fa-rotate-180"></i></a>

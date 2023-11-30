@@ -25,7 +25,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-//taskのRoute
+// taskのRoute
 Route::get('/tasks', [App\Http\Controllers\TaskController::class, 'index'])->name('tasks.index');
 
 Route::get('/tasks/create', [App\Http\Controllers\TaskController::class, 'create'])->name('tasks.create');

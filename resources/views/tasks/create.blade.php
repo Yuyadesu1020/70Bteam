@@ -81,7 +81,6 @@
             <div class="card-img list">
                 <label for="postimage" class="imagine">{{ __('プロフィール画像（サイズは1024Kbteまで）') }}</label>
                 <div class="show">
-    
                 {{-- 写真ファイル選択 --}}
                 <input type="file" id="postimage"  name="postimage">
                 </div>

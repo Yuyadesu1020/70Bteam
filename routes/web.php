@@ -18,11 +18,11 @@ Route::get('/', function () {
 });
 
 Route::get('/show', function () {
-    return view('show');
+    return view('tasks.show');
 });
 
 Route::get('/my/edit', function () {
-    return view('edit');
+    return view('tasks.edit');
 });
 
 Auth::routes();

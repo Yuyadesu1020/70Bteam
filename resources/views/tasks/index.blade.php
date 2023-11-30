@@ -72,15 +72,19 @@
           @foreach($tasks as $task)
           <div class="card-boxes">
               <div class="username list">
-                {{-- {{ Auth::user()->name }} --}}
+                <a href="{{ route('show',[$task->user->id]) }}">{{ Auth::user()->name }}</a>
                 <a href="">{{ $task->title }}</a>
               </div>
             
             <div class="postcontents">
               <div class="postcontent list">{{ $task->body }}</div>
               <div class="like">
-                  <a href=""><i class="far fa-thumbs-up"></i></a>
-                  <a href=""><i class="fa-regular fa-thumbs-up fa-rotate-180"></i></a>
+                @if($task->likedBy(Auth::user())->count()>0)
+                  <a href="/likes/{{ $task->likedBy(Auth::user())->firstOrfail()->id }}"><i class="fa-regular fa-thumbs-up fa-rotate-180"></i></a>
+                  @else
+                  <a href="/tasks/{{ $task->id }}/likes"><i class="far fa-thumbs-up"></i></a>
+                @endif
+                <div class="count">{{ $task->likes->count() }}</div>
               </div>
             </div>
     

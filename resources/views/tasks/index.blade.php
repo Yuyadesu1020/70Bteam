@@ -21,10 +21,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">profile</a>
+                <a class="nav-link active" aria-current="page" href="">profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">post</a>
+                <a class="nav-link" href="{{ route('tasks.create') }}">post</a>
               </li>
             </ul>
             <ul class="navbar-nav ms-auto">
@@ -85,7 +85,7 @@
             </div>
     
               <div class="move-box">
-                <a href="#"><img src="{{ asset('storage/images/'. $imageName ) }}" alt="" class="samplepic"></a>
+                <a href="#"><img src="{{ asset($task->file_path) }}" alt="" class="samplepic"></a>
 
                 <div class="destroy-btn">
                     <form action="#" method="post">

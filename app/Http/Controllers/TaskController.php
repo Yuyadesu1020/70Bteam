@@ -12,9 +12,8 @@ class TaskController extends Controller
     function index(Request $request)
     {
         $tasks = Task::all();//tasksテーブルから全てのデータをとってくる
-        $imageName = $request->input('imageName'); // リダイレクト先からの画像名取得
 
-        return view('tasks.index',compact('tasks', 'imageName'));
+        return view('tasks.index',compact('tasks'));
     }
 
     function create()
@@ -23,7 +22,7 @@ class TaskController extends Controller
     }
 
     function store(Request $request)
-{
+    {
     // フォームから送信された画像を取得
     $image = $request->file('postimage'); // ファイル名を修正
 
@@ -43,35 +42,8 @@ class TaskController extends Controller
 
         $task->save();
     }
-
-    return redirect()->route('tasks.index',['imageName' => $imageName]);
-}
-
-
-    
-    // function store(Request $request)//ブラウザから送られてくる情報を$requestに引き継いでる
-    // {
-    //     //dd($request);
-
-    //     // フォームから送信された画像を取得
-    //     $image = $request->file('postimage');
-
-    //     // 画像を保存するためのファイル名を作成
-    //     $imageName = time() . '_' . $image->getClientOriginalName();
-
-    //     // 画像を public/storage/images ディレクトリに保存
-    //     $image->storeAs('public/images', $imageName);
-        
-    //     $task = new Task;
-    //     $task->title = $request->title;
-    //     $task->body = $request->body;
-    //     $task->user_id = Auth::id();
-    //     $task->file_name = $imageName;//画像のファイル名を保存
-    //     $task->file_path = 'storage/images' . $imageName;//画像の保存パスを保存
-
-    //     $task->save();
-    //     return redirect()->route('tasks.index');
-    // }
+    return redirect()->route('tasks.index'); 
+    }
 
     function show($id)
     {

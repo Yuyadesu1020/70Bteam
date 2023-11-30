@@ -66,8 +66,8 @@
     </nav>
     <div class="pageface">
       <div class="card-head" style="opacity: 0.7">? What to do ?</div>
-        <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
-          @csrf
+        {{-- <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+          @csrf --}}
 
           @foreach($tasks as $task)
           <div class="card-boxes">
@@ -88,9 +88,11 @@
                 <a href="#"><img src="{{ asset($task->file_path) }}" alt="" class="samplepic"></a>
 
                 <div class="destroy-btn">
-                    <form action="#" method="post">
+                    <form action="{{ route('tasks.destroy',$task->id) }}" method="post">
                       @csrf
-                      <input type="submit" value="削除">
+                      @method('delete')
+                      <input type="submit" value="削除" onclick='return confirm("本当に削除しますか？");'>
+                      <a href="{{ route('tasks.show',$task->id) }}" class="">詳細へ</a>
                     </form>
                 </div>
               </div>

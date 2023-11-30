@@ -69,22 +69,28 @@
           </div>
         </div>
     </nav>
-    <form action="#" method="POST">
-        @csrf
-        @method('patch')
-        <div class="edit-title">
-            <label for="">Title</label>
-            <input type="text" class="change-title" value="タイトル変更（仮置き）" name="title">
-            {{-- {{ $tasks->title }} valueのとこへ--}}
-        </div>
+    <div class="edit-page">
+        <div class="edit-box">
+            <form action="#" method="POST">
+                @csrf
+                @method('patch')
+                <div class="edit-title">
+                    <label for="" class="label-title">Title  :
+                    </label>
+                    <input type="text" class="change-title" value="タイトル変更（仮置き）" name="title">
+                    {{-- {{ $tasks->title }} valueのとこへ--}}
+                </div>
 
-        <div class="edit-content">
-            <label>Content</label>
-            <textarea class="change-content" rows="5" name="body"></textarea>
-            {{-- {{ $tasks->body textareaの中に}} --}}
+                <div class="edit-content">
+                    <label class="label-content">Content  :</label>
+                    <textarea class="change-content" rows="5" name="body" placeholder="what's your changing plan?"></textarea>
+                    {{-- {{ $tasks->body textareaの中に}} --}}
+                </div>
+            </form>
         </div>
-
-        <button type="submit" class="btn btn-update">Update</button>
-    </form>
+        <div class="btn-block">
+            <button type="submit" class="btn btn-update">Update</button>
+        </div>
+    </div>
 </body>
 </html>

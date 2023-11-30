@@ -24,7 +24,7 @@
                 <a class="nav-link active" aria-current="page" href="#">profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">+post</a>
+                <a class="nav-link" href="#">post</a>
               </li>
             </ul>
             <ul class="navbar-nav ms-auto">
@@ -122,11 +122,37 @@
                   </form>
               </div>
             </div>
-         </div>
+          </div>
 
           <div class="card-boxes">
-          <div class="username list">
-            {{-- {{ Auth::user()->name }} --}}
+            <div class="username list">
+              {{-- {{ Auth::user()->name }} --}}
+              <a href="">testname</a>
+            </div>
+
+            <div class="postcontents">
+              <div class="postcontent list">何するのかを書く</div>
+              <div class="like">
+                <a href=""><i class="far fa-thumbs-up"></i></a>
+                <a href=""><i class="fa-regular fa-thumbs-up fa-rotate-180"></i></a>
+              </div>
+            </div>
+
+            <div class="move-box">
+              <a href="#"><img src="../image/samplepic.jpg" alt="" class="samplepic"></a>
+    
+              <div class="destroy-btn">
+                  <form action="#" method="post">
+                    @csrf
+                    <input type="submit" value="削除">
+                  </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-boxes">
+            <div class="username list">
+              {{-- {{ Auth::user()->name }} --}}
             <a href="">testname</a>
           </div>
 
@@ -140,43 +166,15 @@
 
           <div class="move-box">
             <a href="#"><img src="../image/samplepic.jpg" alt="" class="samplepic"></a>
-  
+
             <div class="destroy-btn">
-                <form action="#" method="post">
-                  @csrf
-                  <input type="submit" value="削除">
-                </form>
-            </div>
-          </div>
-      </div>
-
-      <div class="card-boxes">
-        <div class="username list">
-          {{-- {{ Auth::user()->name }} --}}
-          <a href="">testname</a>
-        </div>
-
-        <div class="postcontents">
-          <div class="postcontent list">何するのかを書く</div>
-          <div class="like">
-            <a href=""><i class="far fa-thumbs-up"></i></a>
-            <a href=""><i class="fa-regular fa-thumbs-up fa-rotate-180"></i></a>
-          </div>
-        </div>
-
-        <div class="move-box">
-          <a href="#"><img src="../image/samplepic.jpg" alt="" class="samplepic"></a>
-
-          <div class="destroy-btn">
               <form action="#" method="post">
                 @csrf
                 <input type="submit" value="削除">
               </form>
-          </div>
-          </div>
+            </div>
           </div>
         </form>
-      </div>
     </div>
    
       

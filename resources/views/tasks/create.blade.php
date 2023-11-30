@@ -24,7 +24,7 @@
                 <a class="nav-link active" aria-current="page" href="#">profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">+post</a>
+                <a class="nav-link" href="#">post</a>
               </li>
             </ul>
             <ul class="navbar-nav ms-auto">

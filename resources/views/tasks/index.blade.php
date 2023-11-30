@@ -69,24 +69,23 @@
         <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
           @csrf
 
+          @foreach($tasks as $task)
           <div class="card-boxes">
-
               <div class="username list">
                 {{-- {{ Auth::user()->name }} --}}
-                <a href="">testname</a>
+                <a href="">{{ $task->title }}</a>
               </div>
             
             <div class="postcontents">
-              <div class="postcontent list">何するのかを書く</div>
+              <div class="postcontent list">{{ $task->body }}</div>
               <div class="like">
                   <a href=""><i class="far fa-thumbs-up"></i></a>
                   <a href=""><i class="fa-regular fa-thumbs-up fa-rotate-180"></i></a>
               </div>
             </div>
-              
-              
+    
               <div class="move-box">
-                <a href="#"><img src="../image/samplepic.jpg" alt="" class="samplepic"></a>
+                <a href="#"><img src="{{ asset('storage/images/'. $imageName ) }}" alt="" class="samplepic"></a>
 
                 <div class="destroy-btn">
                     <form action="#" method="post">
@@ -95,85 +94,8 @@
                     </form>
                 </div>
               </div>
-
           </div>
-
-          <div class="card-boxes">
-            <div class="username list">
-              {{-- {{ Auth::user()->name }} --}}
-              <a href="">testname</a>
-            </div>
-
-            <div class="postcontents">
-              <div class="postcontent list">何するのかを書く</div>
-              <div class="like">
-                <a href=""><i class="far fa-thumbs-up"></i></a>
-                <a href=""><i class="fa-regular fa-thumbs-up fa-rotate-180"></i></a>
-              </div>
-            </div>
-
-            <div class="move-box">
-              <a href="#"><img src="../image/samplepic.jpg" alt="" class="samplepic"></a>
-    
-              <div class="destroy-btn">
-                  <form action="#" method="post">
-                    @csrf
-                    <input type="submit" value="削除">
-                  </form>
-              </div>
-            </div>
-          </div>
-
-          <div class="card-boxes">
-            <div class="username list">
-              {{-- {{ Auth::user()->name }} --}}
-              <a href="">testname</a>
-            </div>
-
-            <div class="postcontents">
-              <div class="postcontent list">何するのかを書く</div>
-              <div class="like">
-                <a href=""><i class="far fa-thumbs-up"></i></a>
-                <a href=""><i class="fa-regular fa-thumbs-up fa-rotate-180"></i></a>
-              </div>
-            </div>
-
-            <div class="move-box">
-              <a href="#"><img src="../image/samplepic.jpg" alt="" class="samplepic"></a>
-    
-              <div class="destroy-btn">
-                  <form action="#" method="post">
-                    @csrf
-                    <input type="submit" value="削除">
-                  </form>
-              </div>
-            </div>
-          </div>
-
-          <div class="card-boxes">
-            <div class="username list">
-              {{-- {{ Auth::user()->name }} --}}
-            <a href="">testname</a>
-          </div>
-
-          <div class="postcontents">
-            <div class="postcontent list">何するのかを書く</div>
-            <div class="like">
-              <a href=""><i class="far fa-thumbs-up"></i></a>
-              <a href=""><i class="fa-regular fa-thumbs-up fa-rotate-180"></i></a>
-            </div>
-          </div>
-
-          <div class="move-box">
-            <a href="#"><img src="../image/samplepic.jpg" alt="" class="samplepic"></a>
-
-            <div class="destroy-btn">
-              <form action="#" method="post">
-                @csrf
-                <input type="submit" value="削除">
-              </form>
-            </div>
-          </div>
+          @endforeach
         </form>
     </div>
    

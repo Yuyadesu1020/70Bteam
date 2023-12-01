@@ -78,35 +78,51 @@
     </nav>
     <div class="own-card">
       <div class="card-flex">
-        <div class="incard">
-            {{-- <a href="">{{ Auth::user()->name }}</a> --}}
-            {{-- {{ route('show',[$task->user->id]) }} --}}
-            <h4 class="show-title"><!--タイトルルート完了-->{{ $task->title }}</h4>
 
-            <hr>
+        <div class="username"><a class="name" href="">{{ Auth::user()->name }}</a>
+          {{-- {{ route('show',[$task->user->id]) }} --}}</div>
 
-            <p class="card-middle">{{ $task->body }}</p>
-        </div>
         <div class="card-out">
-            <img class="show-img" src="{{ asset($task->file_path) }}" alt="投稿の画像">
+          <img class="show-img" src="{{ asset($task->file_path) }}" alt="投稿の画像">
+        </div>
+
+        <div>
+          <div class="incard">
+            <div>
+              <h4 class="show-title"><!--タイトルルート完了-->{{ $task->title }}</h4>
+
+              <hr>
+
+              <p class="card-middle">{{ $task->body }}</p>
+            </div> 
+          </div>
+
+          <div class="like">
+            @if($task->likedBy(Auth::user())->count()>0)
+              <a href="/likes/{{ $task->likedBy(Auth::user())->firstOrfail()->id }}"><i class="fa-regular fa-thumbs-up fa-rotate-180"></i></a>
+            @else
+                  <a href="/tasks/{{ $task->id }}/likes"><i class="far fa-thumbs-up"></i></a>
+            @endif
+            <div class="count">{{ $task->likes->count() }}</div>
+          </div>
+
         </div>
       </div>
 
-        <div class="like">
-          <a href=""><i class="far fa-thumbs-up"></i></a>
-          <a href=""><i class="fa-regular fa-thumbs-up fa-rotate-180"></i></a>
-        </div>
+      
 
-        <div class="comment-box">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                    <button type="button" class="btn btn-primary" onclick="location.href=''">comment</button>
+      <div class="comment-box">
+        <p class="dratft">ここにコメント打ち込む</p>
+        <div class="row justify-content-center comment-btn-margin">
+          <div class="col-md-8 comment-div">
+            <button type="button" class="comment-btn" onclick="location.href=''">comment</button>
                     {{-- {{ route('comments.create', $tasks->id) }} --}}
-            </div>
+                    {{-- btn btn-primary --}}
           </div>
-          <div class="row justify-content-center">
-            <div class="col-md-8 mt-5">
-              comment list
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-8 mt-5">
+              <p>comment list</p>
               {{-- @foreach($tasks->comments as $comment) --}}
                 <div class="card mt-3">
                     <h5 class="card-header">poster：</h5>
@@ -118,9 +134,10 @@
                         {{-- {{ $comment->created_at }} --}}
                     </div>
                 </div>
-              {{-- @endforeach --}}
-            </div>
+              {{-- @endforeach --}}  
+          </div> 
         </div>
+      </div>
     </div>
 </body>
 </html>

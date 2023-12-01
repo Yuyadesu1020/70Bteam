@@ -77,19 +77,24 @@
         </div>
     </nav>
     <div class="own-card">
-        <div class="card">
+      <div class="card-flex">
+        <div class="incard">
+            {{-- <a href="">{{ Auth::user()->name }}</a> --}}
+            {{-- {{ route('show',[$task->user->id]) }} --}}
             <h4 class="show-title"><!--タイトルルート完了-->{{ $task->title }}</h4>
+
+            <hr>
 
             <p class="card-middle">{{ $task->body }}</p>
         </div>
         <div class="card-out">
-          <div class="img-box">
             <img class="show-img" src="{{ asset($task->file_path) }}" alt="投稿の画像">
-          </div>
-          <div class="like">
-              <a href=""><i class="far fa-thumbs-up"></i></a>
-              <a href=""><i class="fa-regular fa-thumbs-up fa-rotate-180"></i></a>
-          </div>
+        </div>
+      </div>
+
+        <div class="like">
+          <a href=""><i class="far fa-thumbs-up"></i></a>
+          <a href=""><i class="fa-regular fa-thumbs-up fa-rotate-180"></i></a>
         </div>
 
         <div class="comment-box">

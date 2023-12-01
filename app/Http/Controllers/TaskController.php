@@ -65,7 +65,21 @@ class TaskController extends Controller
 
         $task->title = $request->title;
         $task->body = $request->body;
-        $task->file_name = $task->file_path;
+        //$task->file_name = $task->file_path;
+
+        // 新しい画像が送信されたかどうかを確認
+    if ($request->hasFile('newImage')) {
+        // 既存の画像をストレージから削除する場合はここで行う
+
+        // 新しい画像を取得して保存する
+        $image = $request->file('newImage');
+        $newImageName = time() . '_' . $image->getClientOriginalName();
+        $image->storeAs('public/images', $newImageName);
+
+        // 画像パスを更新する
+        $task->file_name = $newImageName;
+        $task->file_path = 'storage/images/' . $newImageName;
+    }
 
         $task->save();
 

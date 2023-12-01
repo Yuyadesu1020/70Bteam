@@ -71,25 +71,36 @@
     </nav>
     <div class="edit-page">
         <div class="edit-box">
-            <form action="#" method="POST">
+            <form action="{{ route('tasks.update',$task->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                @method('patch')
+                @method('put')
                 <div class="edit-title">
                     <label for="" class="label-title">Title  :
                     </label>
-                    <input type="text" class="change-title" value="タイトル変更（仮置き）" name="title">
+                    <input type="text" class="change-title" value="{{ $task->title }}" name="title">
                     {{-- {{ $tasks->title }} valueのとこへ--}}
                 </div>
 
                 <div class="edit-content">
                     <label class="label-content">Content  :</label>
-                    <textarea class="change-content" rows="5" name="body" placeholder="what's your changing plan?"></textarea>
+                    <textarea class="change-content" rows="5" name="body" placeholder="what's your changing plan?" >{{ $task->body }}</textarea>
                     {{-- {{ $tasks->body textareaの中に}} --}}
                 </div>
+
+                <div class="edit-image">
+                    <!-- 既存の画像を表示 -->
+                    <img src="{{ asset($task->file_path) }}" alt="Current Image" class="old-image">
+                    <!-- 新しい画像をアップロードするためのファイル選択 -->
+                    <div>
+                        <label for="newImage">New Image:</label>
+                        <input type="file" id="newImage" name="newImage">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-update">Update</button>
             </form>
         </div>
         <div class="btn-block">
-            <button type="submit" class="btn btn-update">Update</button>
+            {{-- <button type="submit" class="btn btn-update">Update</button> --}}
         </div>
     </div>
 </body>

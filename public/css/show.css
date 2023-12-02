@@ -4,6 +4,16 @@ body{
    padding: 0;
 }
 
+.show-page-title{
+    font-size: 45px;
+    font-family: cursive;
+    background-color: rgba(161, 231, 231, 0.3);
+    height: 70px;
+    margin: 0;
+    text-align: center;
+    padding-top: 40px;
+}
+
 .own-card{
     background-color: rgba(161, 231, 231, 0.3);
     height: 290vh;
@@ -81,7 +91,7 @@ div > .incard{
 .like{
     position: absolute;
     right: 310px;
-    top: 860px;
+    top: 950px;
     /* margin-right: 0; */
 }
 

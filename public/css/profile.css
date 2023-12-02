@@ -1,0 +1,17 @@
+h1{
+    text-align: center;
+    
+}
+.card-boxes{
+    width: 500px;
+    height: 500px;
+    border: solid 5px black;
+    border-radius: 10%;
+    text-align: center;
+    margin: 0 auto 20px auto;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}

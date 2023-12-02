@@ -64,16 +64,16 @@
           </div>
         </div>
     </nav>
-    
-    @foreach($tasks as $task)
+
+    {{-- ユーザーネームの表示 --}}
+    <h1>{{ $user->name }}</h1>
+
+      @foreach($tasks as $task)
+      
     <div class="card-boxes">
         <div class="username list">
-          @if($task->user) <!-- $taskに関連付けられたユーザー情報が存在するかを確認 -->
-          <a href="{{ route('show',[$task->user->id]) }}">{{ $task->user->name }}</a>
-      @else
-          <span>ユーザー情報なし</span> <!-- ユーザー情報がない場合の代替表示 -->
-      @endif
-          <a href="">{{ $task->title }}</a>
+    
+            <p href="{{ route('tasks.show',$task->id) }}">{{ $task->title }}</p>
         </div>
       
       <div class="postcontents">
@@ -104,5 +104,7 @@
         </div>
     </div>
     @endforeach
+
+    
 </body>
 </html>

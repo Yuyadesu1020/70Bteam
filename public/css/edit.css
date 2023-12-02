@@ -2,10 +2,20 @@ body{
     height: 100%;
 }
 
+.edit-page-title{
+    font-size: 45px;
+    font-family: cursive;
+    background-color: rgba(161, 231, 231, 0.3);
+    height: 70px;
+    margin: 0;
+    text-align: center;
+    padding-top: 40px;
+}
+
 .edit-page{
     background-color: rgba(161, 231, 231, 0.3);
-    height: 93vh;
-    padding-top: 120px;
+    height: 127vh;
+    padding-top: 70px;
 }
 
 .edit-box{
@@ -33,6 +43,7 @@ body{
 
 .label-title{
     font-size: 20px;
+    margin-right: 10px;
 }
 
 .edit-content{
@@ -40,7 +51,7 @@ body{
     display: flex;
     flex-direction: row;
     /* justify-content: space-around; */
-    margin: 30px 0px 90px 150px;
+    margin: 30px 0px 100px 150px;
     /* border-bottom: 1px solid rgb(0,0,0,0.3); */
 }
 
@@ -54,7 +65,7 @@ textarea{
 
 .label-content{
     font-size: 20px;
-    margin-right: 39px;
+    margin-right: 10px;
 }
 
 .btn-block{
@@ -66,7 +77,20 @@ textarea{
 }
 
 .old-image{
-    width: 100px;
-    height: 100px;
+    width: 34vw;
+    height: 50vh;
+    border-radius: 10%;
 }
+
+.new-image{
+    margin-top: 140px;
+}
+
+.edit-image{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+}
+
 

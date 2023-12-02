@@ -76,6 +76,7 @@
           </div>
         </div>
     </nav>
+    <h2 class="show-page-title">Task Card</h2>
     <div class="own-card">
       <div class="card-flex">
 

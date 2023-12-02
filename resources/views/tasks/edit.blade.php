@@ -69,6 +69,7 @@
           </div>
         </div>
     </nav>
+    <h2 class="edit-page-title">Edit Card</h2>
     <div class="edit-page">
         <div class="edit-box">
             <form action="{{ route('tasks.update',$task->id) }}" method="POST" enctype="multipart/form-data">
@@ -82,7 +83,7 @@
                 </div>
 
                 <div class="edit-content">
-                    <label class="label-content">Content  :</label>
+                    <label class="label-content">Content  :  </label>
                     <textarea class="change-content" rows="5" name="body" placeholder="what's your changing plan?" >{{ $task->body }}</textarea>
                     {{-- {{ $tasks->body textareaの中に}} --}}
                 </div>
@@ -91,16 +92,16 @@
                     <!-- 既存の画像を表示 -->
                     <img src="{{ asset($task->file_path) }}" alt="Current Image" class="old-image">
                     <!-- 新しい画像をアップロードするためのファイル選択 -->
-                    <div>
-                        <label for="newImage">New Image:</label>
+                    <div class="new-image">
+                        <label for="newImage">📷 : </label>
                         <input type="file" id="newImage" name="newImage">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-update">Update</button>
+
+                <div class="btn-block">
+                    <button type="submit" class="btn btn-update btn-hover">Update</button>
+                 </div>
             </form>
-        </div>
-        <div class="btn-block">
-            {{-- <button type="submit" class="btn btn-update">Update</button> --}}
         </div>
     </div>
 </body>

@@ -9,6 +9,13 @@ use App\Models\Task;
 class TaskController extends Controller
 {
     //
+    function showTimelinePage()
+    {
+        $tasks = Task::latest() -> paginate(4);
+        return view('index', ['tasks'=>$tasks]);
+    }
+
+
     function index(Request $request)
     {
         $tasks = Task::all();//tasksテーブルから全てのデータをとってくる

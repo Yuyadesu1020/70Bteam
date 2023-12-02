@@ -80,7 +80,7 @@
     <div class="own-card">
       <div class="card-flex">
 
-        <div class="username"><a class="name" href="">{{ Auth::user()->name }}</a>
+        <div class="username"><a class="name" href="">{{ $task->user->name }}</a>
           {{-- {{ route('show',[$task->user->id]) }} --}}</div>
 
         <div class="card-out">

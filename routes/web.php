@@ -54,3 +54,5 @@ Route::get('/likes/{like_id}', [App\Http\Controllers\LikeController::class, 'des
 //userのRoute
 Route::get('/user/show{id}', [App\Http\Controllers\UserController::class, 'show'])->name('show');
 
+//profile用のroute
+Route::get('/users/{user}/posts', [App\Http\Controllers\UserController::class, 'posts'])->name('user_posts');

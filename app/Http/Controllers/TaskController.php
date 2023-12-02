@@ -9,16 +9,11 @@ use App\Models\Task;
 class TaskController extends Controller
 {
     //
-    function showTimelinePage()
-    {
-        $tasks = Task::latest() -> paginate(4);
-        return view('index', ['tasks'=>$tasks]);
-    }
-
+    // latest() -> 
 
     function index(Request $request)
     {
-        $tasks = Task::all();//tasksテーブルから全てのデータをとってくる
+        $tasks = Task::simplepaginate(4);//tasksテーブルから全てのデータをとってくる
 
         return view('tasks.index',compact('tasks'));
     }
@@ -131,5 +126,5 @@ class TaskController extends Controller
 
         return redirect()->route('tasks.index');
     }
-    
+
 }

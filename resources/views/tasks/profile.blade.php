@@ -65,5 +65,44 @@
         </div>
     </nav>
     
+    @foreach($tasks as $task)
+    <div class="card-boxes">
+        <div class="username list">
+          @if($task->user) <!-- $taskに関連付けられたユーザー情報が存在するかを確認 -->
+          <a href="{{ route('show',[$task->user->id]) }}">{{ $task->user->name }}</a>
+      @else
+          <span>ユーザー情報なし</span> <!-- ユーザー情報がない場合の代替表示 -->
+      @endif
+          <a href="">{{ $task->title }}</a>
+        </div>
+      
+      <div class="postcontents">
+        <div class="postcontent list">{{ $task->body }}</div>
+        <div class="like">
+          @if($task->likedBy(Auth::user())->count()>0)
+            <a href="/likes/{{ $task->likedBy(Auth::user())->firstOrfail()->id }}"><i class="fa-regular fa-thumbs-up fa-rotate-180"></i></a>
+            @else
+            <a href="/tasks/{{ $task->id }}/likes"><i class="far fa-thumbs-up"></i></a>
+          @endif
+          <div class="count">{{ $task->likes->count() }}</div>
+        </div>
+      </div>
+
+        <div class="move-box">
+          <a href="#"><img src="{{ asset($task->file_path) }}" alt="" class="samplepic"></a>
+
+          <div class="destroy-btn">
+              @if($task->user_id == Auth::user()->id)  <!-- ✅ログイン者のみ消去ボタン表示させる -->
+              <form action="{{ route('tasks.destroy',$task->id) }}" method="post">
+                @csrf
+                @method('delete')
+                <input type="submit" value="削除" onclick='return confirm("本当に削除しますか？");'>
+                @endif
+                <a href="{{ route('tasks.show',$task->id) }}" class="">詳細へ</a>
+              </form>
+          </div>
+        </div>
+    </div>
+    @endforeach
 </body>
 </html>

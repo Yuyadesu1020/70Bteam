@@ -102,9 +102,9 @@
                       @csrf
                       @method('delete')
                       <input type="submit" value="削除" onclick='return confirm("本当に削除しますか？");'>
+                      @endif
                       <a href="{{ route('tasks.show',$task->id) }}" class="">詳細へ</a>
                     </form>
-                    @endif
                 </div>
               </div>
           </div>

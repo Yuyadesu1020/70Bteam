@@ -97,12 +97,14 @@
                 <a href="#"><img src="{{ asset($task->file_path) }}" alt="" class="samplepic"></a>
 
                 <div class="destroy-btn">
+                    @if($task->user_id == Auth::user()->id)  <!-- ✅ログイン者のみ消去ボタン表示させる -->
                     <form action="{{ route('tasks.destroy',$task->id) }}" method="post">
                       @csrf
                       @method('delete')
                       <input type="submit" value="削除" onclick='return confirm("本当に削除しますか？");'>
                       <a href="{{ route('tasks.show',$task->id) }}" class="">詳細へ</a>
                     </form>
+                    @endif
                 </div>
               </div>
           </div>

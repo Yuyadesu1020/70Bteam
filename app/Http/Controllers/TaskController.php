@@ -21,7 +21,9 @@ class TaskController extends Controller
 
     function create()
     {
-        return view('tasks.create');
+        $task = new Task;
+
+        return view('tasks.create', compact('task'));
     }
 
     function store(Request $request)

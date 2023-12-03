@@ -23,8 +23,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ route('user_posts', ['user'=> Auth::user()->id]) }}">profile</a>
-                {{-- user_postsにルートを繋げて、userの定義をする --}}
+                @auth
+                  <a class="nav-link active" aria-current="page" href="{{ route('user_posts', ['user'=> Auth::user()->id]) }}">profile</a>
+                 {{-- user_postsにルートを繋げて、userの定義をする --}}
+                @endauth
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('tasks.create') }}">post</a>
@@ -68,20 +70,32 @@
         </div>
     </nav>
     <div class="pageface">
-      <div class="card-head" style="opacity: 0.7">? What to do ?</div>
+      <div class="card-head" style="opacity: 0.9">? What to do ?</div>
 
           @foreach($tasks as $task)
-          <div class="card-boxes">
-              <div class="username list">
-                {{-- <a href="{{ route('show',[$task->user->id]) }}">{{ Auth::user()->name }}</a> --}}
-                @if($task->user) <!-- $taskに関連付けられたユーザー情報が存在するかを確認 -->
-                <a href="{{ route('show',[$task->user->id]) }}">{{ $task->user->name }}</a>
+
+        <div class="form-index">
+          <div class="username list">
+            {{-- <a href="{{ route('show',[$task->user->id]) }}">{{ Auth::user()->name }}</a> --}}
+            @if($task->user) <!-- $taskに関連付けられたユーザー情報が存在するかを確認 -->
+              <a class="eachname" href="{{ route('show',[$task->user->id]) }}">{{ $task->user->name }}</a>
             @else
-                <span>ユーザー情報なし</span> <!-- ユーザー情報がない場合の代替表示 -->
+              <span>ユーザー情報なし</span> <!-- ユーザー情報がない場合の代替表示 -->
             @endif
                 <div>{{ $task->title }}</div>
               </div>
             
+          </div>
+
+        <div class="imageandpost">
+          <div class="move-box">
+            <a href="#"><img src="{{ asset($task->file_path) }}" alt="" class="samplepic"></a>
+          </div>
+          <div class="card-boxes">  
+            <div class="posttitle">   
+              <p href="">{{ $task->title }}</p>  
+            </div>   
+
             <div class="postcontents">
               <div class="postcontent list">{{ $task->body }}</div>
               <div class="like">
@@ -93,6 +107,7 @@
                 <div class="count">{{ $task->likes->count() }}</div>
               </div>
             </div>
+
     
               <div class="move-box">
                 @if($task->file_path) 
@@ -101,24 +116,28 @@
                 <div>画像無し</div>
                 @endif 
                
-
+          </div>
+        </div>
+        
                 <div class="destroy-btn">
                     @if($task->user_id == Auth::user()->id)  <!-- ✅ログイン者のみ消去ボタン表示させる -->
                     <form action="{{ route('tasks.destroy',$task->id) }}" method="post">
                       @csrf
                       @method('delete')
-                      <input type="submit" value="削除" onclick='return confirm("本当に削除しますか？");'>
+                      <input type="submit" value="🗑️" onclick='return confirm("本当に削除しますか？");'>
                       @endif
-                      <a href="{{ route('tasks.show',$task->id) }}" class="">詳細へ</a>
+                      <a href="{{ route('tasks.show',$task->id) }}" class="">show more</a>
                     </form>
                 </div>
-              </div>
+              
+              
           </div>
           @endforeach
           {{-- {{ dd($tasks) }} --}}
           <div class="navigation">
             {{ $tasks->links() }}
           </div>
+        </div>
     </div>
 </body>
 </html>

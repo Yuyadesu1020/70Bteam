@@ -13,7 +13,8 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><i class="fa-solid fa-arrow-rotate-left"></i></a>
+            {{-- <a class="navbar-brand" href="#"><i class="fa-solid fa-arrow-rotate-left"></i></a> --}}
+            <a class="navbar-brand" href="{{ route('tasks.index') }}">Move_on</a>
           <!-- Right Side Of Navbar -->
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -21,16 +22,12 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">home</a>
-              </li>
-
+                <a class="nav-link active" aria-current="page" href="{{ route('user_posts', ['user'=> Auth::user()->id]) }}">profile</a>
+              </li>   
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">profile</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link" href="#">delete</a>
-              </li>
+                <a class="nav-link" href="{{ route('tasks.create') }}">post</a>
+              </li>          
+                {{-- <a class="nav-link" href="#">delete</a> --}}
             </ul>
             <ul class="navbar-nav ms-auto">
               <!-- Authentication Links -->
@@ -71,6 +68,15 @@
     </nav>
     <h2 class="edit-page-title">Edit Card</h2>
     <div class="edit-page">
+        <div class="delete-box">
+            <form action='' method='post'>
+                @csrf
+                @method('delete')
+                <input type='submit' style="font-size: 25px;" value='🗑️'  class="btn" 
+                {{-- jsの確認ダイヤル/ボタンをクリックすると確認表示が出る --}}
+                onclick='return confirm("本当に削除しますか？");'>
+            </form>
+        </div>
         <div class="edit-box">
             <form action="{{ route('tasks.update',$task->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf

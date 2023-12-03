@@ -14,8 +14,18 @@ body{
 
 .edit-page{
     background-color: rgba(161, 231, 231, 0.3);
-    height: 127vh;
+    height: 135vh;
     padding-top: 70px;
+}
+
+.delete-box{
+    display: flex;
+    justify-content: center;
+}
+
+form > .btn{
+    width: 80vw;
+    text-align: right;
 }
 
 .edit-box{

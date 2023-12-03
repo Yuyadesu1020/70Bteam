@@ -29,7 +29,7 @@ class TaskController extends Controller
         $validated = $request->validate([
             'title' => 'required|unique:tasks|max:200',
             'body' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         
         ],[
             'title.required'=> 'Inform your title',
@@ -38,25 +38,28 @@ class TaskController extends Controller
             'body.required' => 'Inform your content',
         ]);
 
+    $task = new Task;
+
     // フォームから送信された画像を取得
     $image = $request->file('postimage'); // ファイル名を修正
-
     if ($image) {
         // 画像を保存するためのファイル名を作成
         $imageName = time() . '_' . $image->getClientOriginalName();
-
         // 画像を public/storage/images ディレクトリに保存
+        // $image->move(public_path('/storage/images'), $imageName);
         $image->storeAs('public/images', $imageName);
-
-        $task = new Task;
+        $task->file_name = $imageName; // 画像のファイル名を保存
+        $task->file_path = 'storage/images/' . $imageName; // 画像の保存パスを保存   
+    }
+    // else{
+    //     $task->file_name = null;
+    //     $task->file_path = null;
+    // }
         $task->title = $request->title;
         $task->body = $request->body;
         $task->user_id = Auth::id();
-        $task->file_name = $imageName; // 画像のファイル名を保存
-        $task->file_path = 'storage/images/' . $imageName; // 画像の保存パスを保存
-
         $task->save();
-    }
+
     return redirect()->route('tasks.index'); 
     }
 

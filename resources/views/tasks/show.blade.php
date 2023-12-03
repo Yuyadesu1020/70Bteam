@@ -21,22 +21,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">profile</a>
+                <a class="nav-link active" aria-current="page" href="{{ route('user_posts', ['user'=> Auth::user()->id]) }}">profile</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('tasks.create') }}">post</a>
-              </li>
-              <li>
-                <a class="nav-link" href="{{ route('tasks.edit',$task->id) }}">edit</a>
-              </li>
-              <li>
-                <form action='' method='post'>
-                    @csrf
-                    @method('delete')
-                    <input type='submit' value='delete' class="btn" 
-                    {{-- jsの確認ダイヤル/ボタンをクリックすると確認表示が出る --}}
-                    onclick='return confirm("本当に削除しますか？");'>
-                </form>
               </li>
             </ul>
             <ul class="navbar-nav ms-auto">
@@ -85,6 +73,20 @@
 
         <div class="card-out">
           <img class="show-img" src="{{ asset($task->file_path) }}" alt="投稿の画像">
+          {{-- <div class="handwork"> --}}
+            <div class="pencil-box">
+              <a class="pencil" href="{{ route('tasks.edit',$task->id) }}">✏️</a>
+            </div>
+            <div class="erase-box">
+              <form action='' method='post'>
+                @csrf
+                @method('delete')
+                <input type='submit' style="font-size: 33px;" value='🗑️'  class="btn" 
+                {{-- jsの確認ダイヤル/ボタンをクリックすると確認表示が出る --}}
+                onclick='return confirm("本当に削除しますか？");'>
+              </form>
+            </div>
+          {{-- </div> --}}
         </div>
 
         <div>

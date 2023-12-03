@@ -23,4 +23,5 @@ class Task extends Model
     {
         return Like::where('user_id',$user->id)->where('task_id',$this->id);
     }
+
 }

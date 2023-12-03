@@ -82,6 +82,9 @@
             @else
               <span>ユーザー情報なし</span> <!-- ユーザー情報がない場合の代替表示 -->
             @endif
+                <div>{{ $task->title }}</div>
+              </div>
+            
           </div>
 
         <div class="imageandpost">
@@ -92,6 +95,7 @@
             <div class="posttitle">   
               <p href="">{{ $task->title }}</p>  
             </div>   
+
             <div class="postcontents">
               <div class="postcontent list">{{ $task->body }}</div>
               <div class="like">
@@ -103,6 +107,15 @@
                 <div class="count">{{ $task->likes->count() }}</div>
               </div>
             </div>
+
+    
+              <div class="move-box">
+                @if($task->file_path) 
+                <img src="{{ asset($task->file_path) }}" alt="" class="samplepic">
+                @else
+                <div>画像無し</div>
+                @endif 
+               
           </div>
         </div>
         

@@ -76,7 +76,7 @@
                 @csrf
                 @method('put')
                 <div class="edit-title">
-                    <label for="" class="label-title">Title  :
+                    <label for="" class="label-title">Schedule  :
                     </label>
                     <input type="text" class="change-title" value="{{ $task->title }}" name="title">
                     {{-- {{ $tasks->title }} valueのとこへ--}}

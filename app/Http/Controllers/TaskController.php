@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Task;
+use Illuminate\Auth\Events\Validated;
 
 class TaskController extends Controller
 {
@@ -25,6 +26,18 @@ class TaskController extends Controller
 
     function store(Request $request)
     {
+        $validated = $request->validate([
+            'title' => 'required|unique:tasks|max:200',
+            'body' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
+        
+        ],[
+            'title.required'=> 'Inform your title',
+            'title.unique' => 'This title exists',
+            'title.max' => 'Your title need to be under 200',
+            'body.required' => 'Inform your content',
+        ]);
+
     // フォームから送信された画像を取得
     $image = $request->file('postimage'); // ファイル名を修正
 

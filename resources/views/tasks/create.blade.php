@@ -74,8 +74,7 @@
 
             <div class="form-content">
                 <label>Schedule</label>
-                <textarea class="form-area" placeholder="What's your plan?" rows="5" name="body">
-                </textarea>
+                <textarea class="form-area" placeholder="What's your plan?" rows="5" name="body"></textarea>
             </div>
 
             <div class="card-img list">

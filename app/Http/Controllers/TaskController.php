@@ -14,7 +14,7 @@ class TaskController extends Controller
 
     function index(Request $request)
     {
-        $tasks = Task::simplepaginate(4);//tasksテーブルから全てのデータをとってくる
+        $tasks = Task::orderBy('created_at', 'desc')->simplePaginate(4);//新しい順位並び替え
 
         return view('tasks.index',compact('tasks'));
     }
@@ -41,7 +41,7 @@ class TaskController extends Controller
         $validated = $request->validate([
             'title' => 'required|unique:tasks|max:200',
             'body' => 'required',
-            'postimage' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // postimageを追加して画像が選択されていなくても良いことを示す
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // postimageを追加して画像が選択されていなくても良いことを示す
         ],[
             'title.required'=> 'Inform your title',
             'title.unique' => 'This title exists',
@@ -126,33 +126,33 @@ class TaskController extends Controller
     }
 
 
-    function uploadImage(Request $request, $task_id)
-    {
-        // タスクを取得
-        $task = Task::find($task_id);
+    // function uploadImage(Request $request, $task_id)
+    // {
+    //     // タスクを取得
+    //     $task = Task::find($task_id);
 
-        // フォームから送信された画像を取得
-        $image = $request->file('image');
+    //     // フォームから送信された画像を取得
+    //     $image = $request->file('image');
 
-        if ($image) {
-            // 画像を保存するためのファイル名を作成
-            $imageName = time() . '_' . $image->getClientOriginalName();
+    //     if ($image) {
+    //         // 画像を保存するためのファイル名を作成
+    //         $imageName = time() . '_' . $image->getClientOriginalName();
 
-            // 画像を public/storage/images ディレクトリに保存
-            $image->storeAs('public/images', $imageName);
+    //         // 画像を public/storage/images ディレクトリに保存
+    //         $image->storeAs('public/images', $imageName);
 
-            // 以前の画像が存在する場合は削除する（オプション）
-            if ($task->file_name) {
-                Storage::delete('public/images/' . $task->file_name);
-            }
+    //         // 以前の画像が存在する場合は削除する（オプション）
+    //         if ($task->file_name) {
+    //             Storage::delete('public/images/' . $task->file_name);
+    //         }
 
-            // タスクの画像情報を更新
-            $task->file_name = $imageName;
-            $task->file_path = 'storage/images/' . $imageName;
-            $task->save();
-        }
+    //         // タスクの画像情報を更新
+    //         $task->file_name = $imageName;
+    //         $task->file_path = 'storage/images/' . $imageName;
+    //         $task->save();
+    //     }
 
-        return redirect()->route('tasks.index');
-    }
+    //     return redirect()->route('tasks.index');
+    // }
 
 }

@@ -79,7 +79,7 @@
             @else
                 <span>ユーザー情報なし</span> <!-- ユーザー情報がない場合の代替表示 -->
             @endif
-                <a href="">{{ $task->title }}</a>
+                <div>{{ $task->title }}</div>
               </div>
             
             <div class="postcontents">
@@ -95,7 +95,12 @@
             </div>
     
               <div class="move-box">
-                <a href="#"><img src="{{ asset($task->file_path) }}" alt="" class="samplepic"></a>
+                @if($task->file_path) 
+                <img src="{{ asset($task->file_path) }}" alt="" class="samplepic">
+                @else
+                <div>画像無し</div>
+                @endif 
+               
 
                 <div class="destroy-btn">
                     @if($task->user_id == Auth::user()->id)  <!-- ✅ログイン者のみ消去ボタン表示させる -->

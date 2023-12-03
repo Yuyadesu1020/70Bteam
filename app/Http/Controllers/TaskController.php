@@ -26,17 +26,29 @@ class TaskController extends Controller
 
     function store(Request $request)
     {
+        // $validated = $request->validate([
+        //     'title' => 'required|unique:tasks|max:200',
+        //     'body' => 'required',
+        //     'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        
+        // ],[
+        //     'title.required'=> 'Inform your title',
+        //     'title.unique' => 'This title exists',
+        //     'title.max' => 'Your title need to be under 200',
+        //     'body.required' => 'Inform your content',
+        // ]);
+
         $validated = $request->validate([
             'title' => 'required|unique:tasks|max:200',
             'body' => 'required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-        
+            'postimage' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // postimageを追加して画像が選択されていなくても良いことを示す
         ],[
             'title.required'=> 'Inform your title',
             'title.unique' => 'This title exists',
-            'title.max' => 'Your title need to be under 200',
+            'title.max' => 'Your title needs to be under 200',
             'body.required' => 'Inform your content',
         ]);
+        
 
     $task = new Task;
 

@@ -21,11 +21,11 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">profile</a>
+                <a class="nav-link active" aria-current="page" href="{{ route('user_posts', ['user'=> Auth::user()->id]) }}">profile</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">post</a>
-              </li>
+              {{-- <li class="nav-item">
+                <a class="nav-link" href="{{ route('tasks.create') }}">post</a>
+              </li> --}}
             </ul>
             <ul class="navbar-nav ms-auto">
               <!-- Authentication Links -->
@@ -64,30 +64,58 @@
           </div>
         </div>
     </nav>
-    <div class="create-form">
-        <form action="{{ route('tasks.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div class="title">
-                <label for="">Title</label>
-                <input type="text" class="form-control" placeholder="Put your title" name="title">
-            </div>
-
-            <div class="form-content">
-                <label>Schedule</label>
-                <textarea class="form-area" placeholder="What's your plan?" rows="5" name="body"></textarea>
-            </div>
-
-            <div class="card-img list">
-                <label for="postimage" class="imagine">{{ __('プロフィール画像（サイズは1024Kbteまで）') }}</label>
-                <div class="show">
-                {{-- 写真ファイル選択 --}}
-                <input type="file" id="postimage"  name="postimage">
+    <h2 class="create-title">What's your plan?</h2>
+    <div class="create-page">
+        <div class="create-form">
+            <form action="{{ route('tasks.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="title">
+                    <label for="" class="label-title">Schedule : </label>
+                    <input type="text" class="title-form" placeholder="Put your title" name="title">
                 </div>
-            </div>
 
-            <button type="submit" class="post-btn">post</button>
-        </form>
+                <div class="form-content">
+                    <label class="label-content">Content : </label>
+                    <textarea class="form-area" placeholder="Fill your blank" rows="5" name="body"></textarea>
+                </div>
 
+                <div class="create-image">
+                    <img id="currentImage" src="{{ asset($task->file_path) }}" alt="Current Image" class="old-image">
+
+                    <label for="postimage" class="imagine">{{ __('プロフィール画像（サイズは1024Kbteまで）') }}</label>
+                    <div class="show">
+                        {{-- 写真ファイル選択 --}}
+                        <input type="file" id="postimage"  name="postimage">
+                    </div>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const newImageInput = document.getElementById('newImage');
+                            const currentImage = document.getElementById('currentImage');
+                            const openDialogButton = document.getElementById('openDialog');
+
+                            openDialogButton.addEventListener('click', function(event) {
+                                event.preventDefault(); // デフォルトの挙動を停止
+                                newImageInput.click(); // ファイル選択ダイアログを開く
+                            });
+
+                            newImageInput.addEventListener('change', function(event) {
+                                const selectedFile = event.target.files[0];
+                                const reader = new FileReader();
+
+                                reader.onload = function(e) {
+                                    currentImage.src = e.target.result;
+                                };
+
+                                reader.readAsDataURL(selectedFile);
+                            });
+                        });
+                    </script>
+                </div>
+                <div class="submit-box">
+                    <button type="submit" class="post-btn">post</button>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>

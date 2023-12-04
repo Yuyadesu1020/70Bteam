@@ -65,7 +65,27 @@
         </div>
     </nav>
 
+    <h2 class="create-title">What's your plan?</h2>
+    <div class="create-page">
+        <div class="create-form">
+            <form action="{{ route('tasks.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="title">
+                    <label for="" class="label-title">Schedule : </label>
+                    <input type="text" class="title-form" placeholder="Put your title" name="title">
+                    {{-- ✅エラー文表示 --}}
+                    @error('body')
+                    <p class="text-red-500" style="color: red;">{{ $message }}</p>
+                    @enderror
+                </div>
 
+                <div class="form-content">
+                    <label class="label-content">Content : </label>
+                    <textarea class="form-area" placeholder="Fill your blank" rows="5" name="body"></textarea>
+                    {{-- ✅エラー文表示 --}}
+                    @error('title')
+                    <p class="text-red-500" style="color: red;">{{ $message }}</p>
+                    @enderror
                 </div>
 
                 <div class="create-image">
@@ -75,6 +95,10 @@
                     <div class="show">
                         {{-- 写真ファイル選択 --}}
                         <input type="file" id="postimage"  name="postimage">
+                        {{-- ✅エラー文表示 --}}
+                        @error('postimage')
+                        <p class="text-red-500" style="color: red;">{{ $message }}</p>
+                        @enderror
                     </div>
                     <script>
                         document.addEventListener('DOMContentLoaded', function() {

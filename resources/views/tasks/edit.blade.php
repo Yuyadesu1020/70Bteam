@@ -103,44 +103,43 @@
                         <input type="file" id="newImage" name="newImage">
                     </div> --}}
                     <!-- 既存の画像を表示 -->
-<img id="currentImage" src="{{ asset($task->file_path) }}" alt="Current Image" class="old-image">
+                        <img id="currentImage" src="{{ asset($task->file_path) }}" alt="Current Image" class="old-image">
 
-<!-- 新しい画像をアップロードするためのファイル選択 -->
-<div class="new-image">
-    <label for="newImage">📷 : </label>
-    <input type="file" id="newImage" name="newImage" style="display: none;">
-    <button id="openDialog">画像を選択</button>
-</div>
+                        <!-- 新しい画像をアップロードするためのファイル選択 -->
+                        <div class="new-image">
+                            <label for="newImage">📷 : </label>
+                            <input type="file" id="newImage" name="newImage" style="display: none;">
+                            <button id="openDialog">画像を選択</button>
+                        </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const newImageInput = document.getElementById('newImage');
-        const currentImage = document.getElementById('currentImage');
-        const openDialogButton = document.getElementById('openDialog');
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const newImageInput = document.getElementById('newImage');
+                            const currentImage = document.getElementById('currentImage');
+                            const openDialogButton = document.getElementById('openDialog');
 
-        openDialogButton.addEventListener('click', function(event) {
-            event.preventDefault(); // デフォルトの挙動を停止
-            newImageInput.click(); // ファイル選択ダイアログを開く
-        });
+                            openDialogButton.addEventListener('click', function(event) {
+                                event.preventDefault(); // デフォルトの挙動を停止
+                                newImageInput.click(); // ファイル選択ダイアログを開く
+                            });
 
-        newImageInput.addEventListener('change', function(event) {
-            const selectedFile = event.target.files[0];
-            const reader = new FileReader();
+                            newImageInput.addEventListener('change', function(event) {
+                                const selectedFile = event.target.files[0];
+                                const reader = new FileReader();
 
-            reader.onload = function(e) {
-                currentImage.src = e.target.result;
-            };
+                                reader.onload = function(e) {
+                                    currentImage.src = e.target.result;
+                                };
 
-            reader.readAsDataURL(selectedFile);
-        });
-    });
-</script>
-
+                                reader.readAsDataURL(selectedFile);
+                            });
+                        });
+                    </script>
                 </div>
 
                 <div class="btn-block">
                     <button type="submit" class="btn btn-update btn-hover">Update</button>
-                 </div>
+                </div>
             </form>
         </div>
     </div>

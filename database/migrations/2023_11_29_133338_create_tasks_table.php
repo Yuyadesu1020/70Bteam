@@ -18,8 +18,8 @@ class CreateTasksTable extends Migration
             $table->integer('user_id');
             $table->text('title');
             $table->text('body');
-            $table->string('file_name');
-            $table->string('file_path');
+            $table->string('file_name')->nullable();
+            $table->string('file_path')->nullable();
             $table->timestamps();
         });
     }

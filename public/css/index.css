@@ -3,16 +3,22 @@ body{
 }
 .pageface{
    background-color: rgba(161, 231, 231, 0.3);
-   height: 250vh;
+   height: 260vh;
 }
+
+.form-index{
+    width: 80vw;
+    margin: 0 auto 0 auto;
+}
+
 .card-head{
-    font-size: 50px;
+    font-size: 70px;
     text-align: center;
     padding-top: 40px;
     padding-bottom: 30px;
-    letter-spacing: 10px;
-    text-decoration:underline;
+    font-family: cursive;
 }
+
 .card-boxes{
     border: 1px solid rgb(0,0,0,0.3);
     border-radius: 30px;
@@ -20,6 +26,10 @@ body{
     height: 50vh;
     margin: 0 auto 50px auto;
     background-color: rgb(250,240,230,0.7);
+}
+
+.posttitle{
+    border-bottom: 1px solid rgb(0,0,0,0.3);
 }
 
 .postcontents{
@@ -37,10 +47,24 @@ body{
     padding-top: 30px;
     padding-left: 40px;
 }
-.username{
-    border-bottom: 1px solid rgb(0,0,0,0.3);
+.username{ 
     padding-bottom: 30px;
+    margin-left: 10px;
 }
+
+.eachname{
+    font-size: 30px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.imageandpost{
+    display: flex;
+    flex-direction: row;
+
+}
+
 .like{
     /* border: 1px solid black; */
     border-bottom: 1px solid rgb(0,0,0,0.3);

@@ -48,7 +48,7 @@ form > .btn{
     border: 1px solid rgb(0,0,0,0.2);
     background-color: rgb(250,240,230,0.9);
     height: 40px;
-    width: 25vw;
+    width: 50vw;
 }
 
 .label-title{
@@ -68,9 +68,8 @@ form > .btn{
 textarea{
     border: 1px solid rgb(0,0,0,0.2);
     background-color: rgb(250,240,230,0.9);
-    width: 70%;
+    width: 80%;
     height: 30vh;
-    
 }
 
 .label-content{

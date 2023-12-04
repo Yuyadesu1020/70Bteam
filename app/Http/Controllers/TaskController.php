@@ -45,10 +45,10 @@ class TaskController extends Controller
             'body' => 'required',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // postimageを追加して画像が選択されていなくても良いことを示す
         ],[
-            'title.required'=> 'Inform your title',
-            'title.unique' => 'This title exists',
-            'title.max' => 'Your title needs to be under 200',
-            'body.required' => 'Inform your content',
+            'title.required'=> '※ Inform your schedule',
+            'title.unique' => '※ This title exists',
+            'title.max' => '※Your title needs to be under 200',
+            'body.required' => '※ Inform your content',
         ]);
         
 

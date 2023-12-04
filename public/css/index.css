@@ -23,7 +23,7 @@ body{
     border: 1px solid rgb(0,0,0,0.3);
     border-radius: 30px;
     width: 70vw;
-    height: 50vh;
+    height: 30vh;
     margin: 0 auto 50px auto;
     background-color: rgb(250,240,230,0.7);
 }
@@ -39,7 +39,7 @@ body{
 }
 .postcontent{
     display: flex;
-    border-bottom: 1px solid rgb(0,0,0,0.3);
+    /* border-bottom: 1px solid rgb(0,0,0,0.3); */
     padding-bottom: 30px;
     width: 100%;
 }
@@ -62,12 +62,10 @@ body{
 .imageandpost{
     display: flex;
     flex-direction: row;
-
 }
 
 .like{
     /* border: 1px solid black; */
-    border-bottom: 1px solid rgb(0,0,0,0.3);
     display: flex;
     flex-direction: row;
     align-items: center;

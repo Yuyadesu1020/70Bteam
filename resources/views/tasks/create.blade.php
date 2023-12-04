@@ -89,18 +89,16 @@
                 </div>
 
                 <div class="create-image">
-                    <!-- 既存の画像を表示 -->
+                    <!-- 投稿する画像を表示 -->
                     <img id="currentImage" src="{{ asset($task->file_path) }}" alt="Current Image" class="old-image">
 
                     <label for="postimage" class="imagine">{{ __('プロフィール画像（サイズは1024Kbteまで）') }}</label>
                     <div class="show">
-                        {{-- 写真ファイル選択
-                        <input type="file" id="postimage"  name="postimage"> --}}
-
                          <!-- 新しい画像をアップロードするためのファイル選択 -->
                          <div class="new-image">
-                            <label for="newImage">📷 : </label>
-                            <input type="file" id="newImage" name="newImage" style="display: none;">
+                            
+                            <label for="postimage">📷 : </label>
+                            <input type="file" id="postimage" name="postimage" style="display: none;">
                             <button id="openDialog">画像を選択</button>
                         </div>
                         {{-- ✅エラー文表示 --}}
@@ -110,23 +108,23 @@
                     </div>
                     <script>
                         document.addEventListener('DOMContentLoaded', function() {
-                            const newImageInput = document.getElementById('newImage');
+                            const newImageInput = document.getElementById('postimage');
                             const currentImage = document.getElementById('currentImage');
                             const openDialogButton = document.getElementById('openDialog');
-
+                    
                             openDialogButton.addEventListener('click', function(event) {
                                 event.preventDefault(); // デフォルトの挙動を停止
                                 newImageInput.click(); // ファイル選択ダイアログを開く
                             });
-
+                    
                             newImageInput.addEventListener('change', function(event) {
                                 const selectedFile = event.target.files[0];
                                 const reader = new FileReader();
-
+                    
                                 reader.onload = function(e) {
-                                    currentImage.src = e.target.result;
+                                    currentImage.src = e.target.result; // 新しい画像を投稿する画像に反映
                                 };
-
+                    
                                 reader.readAsDataURL(selectedFile);
                             });
                         });

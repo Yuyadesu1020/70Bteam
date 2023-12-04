@@ -52,7 +52,7 @@ Route::get('/tasks/{task_id}/likes', [App\Http\Controllers\LikeController::class
 Route::get('/likes/{like_id}', [App\Http\Controllers\LikeController::class, 'destroy'])->name('likes.destroy');
 
 //userのRoute
-Route::get('/user/show{id}', [App\Http\Controllers\UserController::class, 'show'])->name('show');
+Route::get('/user/show{id}', [App\Http\Controllers\UserController::class, 'show'])->name('tasks.profile');
 
 //profile用のroute
 Route::get('/users/{user}/posts', [App\Http\Controllers\UserController::class, 'posts'])->name('user_posts');

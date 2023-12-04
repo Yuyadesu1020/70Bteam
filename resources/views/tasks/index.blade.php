@@ -134,10 +134,10 @@
           </div>
 
             @endforeach
-            {{-- {{ dd($tasks) }} --}}
-            <div class="navigation">
-              {{ $tasks->links() }}
-            </div>
+          </div>
+          {{-- {{ dd($tasks) }} --}}
+          <div class="navigation">
+            {{ $tasks->links() }}
           </div>
     </div>
   <script>

@@ -31,17 +31,14 @@ div > .card-flex{
     background-color: rgba(161, 231, 231, 0.07);
     /* border: 1px solid black; */
     /* border-radius: 24%; */
-    width: 80px;
-
+    width: 200px;
     margin: 0 auto 0 auto;
-    padding: 0 auto 50px auto;
+    /* padding: 0 auto 50px auto; */
 }
 
 .name{
-    display: flex;
-    justify-content: center;
-    /* height: 50px; */
-    padding: 10px;
+    /* width: 150px; */
+    padding-left: 50px;
     /* margin-bottom: 10px; */
     font-size: 40px;
     text-decoration: none;
@@ -83,12 +80,13 @@ div > .incard{
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-    margin-left: 120px;
+    margin-left: 170px;
 }
 
 .pencil-box{
     /* margin-top: 280px;*/
-    margin-left: 40px; 
+    padding-left: 30px;
+    margin-left: 10px; 
     display: flex;
     flex-direction: column;
     justify-content:end;
@@ -96,23 +94,16 @@ div > .incard{
 
 .pencil{
     text-decoration: none;
-    font-size: 33px;
+    font-size: 35px;
 }
 
 .erase-box{
     /* margin-top: 275px;*/
-    margin-left: 25px; 
+    margin-left: 10px; 
     display: flex;
     flex-direction: column;
     justify-content: end;
 }
-
-
-/* .handwork{
-    display: flex;
-    flex-direction: row;
-    margin-top: 90px;
-} */
 
 .like{
     position: absolute;

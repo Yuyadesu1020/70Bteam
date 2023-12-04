@@ -116,6 +116,7 @@ body{
     display: flex;
     justify-content: right;
     margin-left: 5px;
+    border: none;
 }
 
 .destroy-btn{
@@ -127,8 +128,4 @@ body{
     justify-content: center;
 }
 
-.trash{
-    background-color: rgba(161, 231, 231, 0.1);
-    border: none;
-}
 

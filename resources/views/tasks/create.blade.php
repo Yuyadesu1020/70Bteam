@@ -64,19 +64,8 @@
           </div>
         </div>
     </nav>
-    <h2 class="create-title">What's your plan?</h2>
-    <div class="create-page">
-        <div class="create-form">
-            <form action="{{ route('tasks.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="title">
-                    <label for="" class="label-title">Schedule : </label>
-                    <input type="text" class="title-form" placeholder="Put your title" name="title">
-                </div>
 
-                <div class="form-content">
-                    <label class="label-content">Content : </label>
-                    <textarea class="form-area" placeholder="Fill your blank" rows="5" name="body"></textarea>
+
                 </div>
 
                 <div class="create-image">

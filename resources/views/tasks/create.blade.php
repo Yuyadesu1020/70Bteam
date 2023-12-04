@@ -70,11 +70,19 @@
             <div class="title">
                 <label for="">Title</label>
                 <input type="text" class="form-control" placeholder="Put your title" name="title">
+                {{-- ✅エラー文表示 --}}
+                @error('title')
+                <p class="text-red-500" style="color: red;">※タイトルが未記入です</p>
+                @enderror
             </div>
 
             <div class="form-content">
                 <label>Schedule</label>
                 <textarea class="form-area" placeholder="What's your plan?" rows="5" name="body"></textarea>
+                {{-- ✅エラー文表示 --}}
+                @error('body')
+                <p class="text-red-500" style="color: red;">※スケジュールが未記入です</p>
+                @enderror
             </div>
 
             <div class="card-img list">
@@ -82,6 +90,10 @@
                 <div class="show">
                 {{-- 写真ファイル選択 --}}
                 <input type="file" id="postimage"  name="postimage">
+                {{-- ✅エラー文表示 --}}
+                @error('postimage')
+                    <p class="text-red-500" style="color: red;">※画像がありません</p>
+                @enderror
                 </div>
             </div>
 

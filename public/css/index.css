@@ -76,6 +76,12 @@ body{
     /* display: flex; */
 }
 
+.click-btn{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
 .like{
     /* border: 1px solid black; */
     display: flex;
@@ -106,14 +112,14 @@ body{
     border-radius: 20px;
 }
 
-.hand{
+.trash{
     display: flex;
     justify-content: right;
-    margin-right: 220px;
+    margin-left: 5px;
 }
 
 .destroy-btn{
-   margin-top: 90px;
+   margin-top: 200px;
 }
 
 .navigation{

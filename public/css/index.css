@@ -11,6 +11,18 @@ body{
     margin: 0 auto 0 auto;
 }
 
+.imageandpost{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto -70px auto;
+    width: 55vw;
+}
+
+.no-image{
+    margin-right: 210px;
+}
+
 .card-head{
     font-size: 70px;
     text-align: center;
@@ -20,11 +32,10 @@ body{
 }
 
 .card-boxes{
-    border: 1px solid rgb(0,0,0,0.3);
-    border-radius: 30px;
+    /* border: 1px solid rgb(0,0,0,0.3); */
+    /* border-radius: 30px; */
     width: 70vw;
     height: 30vh;
-    margin: 0 auto 50px auto;
     background-color: rgb(250,240,230,0.7);
 }
 
@@ -35,7 +46,9 @@ body{
 .postcontents{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    
+    width: 65vw;
+    margin-right: 30px;
 }
 .postcontent{
     display: flex;
@@ -59,20 +72,20 @@ body{
     text-decoration: none;
 }
 
-.imageandpost{
-    display: flex;
-    flex-direction: row;
+.word-form{
+    /* display: flex; */
 }
 
 .like{
     /* border: 1px solid black; */
     display: flex;
     flex-direction: row;
-    align-items: center;
-    padding-right: 20px;
+    margin-left: 120px;
+    margin-top: 200px;
 }
+
 .fa-thumbs-up{
-    padding-right: 10px;
+    padding-right: 5px;
 }
 
 .count{margin-left: 10px;
@@ -85,18 +98,18 @@ body{
     
 }
 
-
-.move-box{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-
-}
-
 .samplepic{
     margin: 30px;
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 150px;
+    box-shadow: 20px 20px 15px -10px;
+    border-radius: 20px;
+}
+
+.hand{
+    display: flex;
+    justify-content: right;
+    margin-right: 220px;
 }
 
 .destroy-btn{
@@ -108,8 +121,8 @@ body{
     justify-content: center;
 }
 
-/* .pagination{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  } */
+.trash{
+    background-color: rgba(161, 231, 231, 0.1);
+    border: none;
+}
+

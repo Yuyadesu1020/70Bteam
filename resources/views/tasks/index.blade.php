@@ -82,58 +82,60 @@
             @else
               <span>ユーザー情報なし</span> <!-- ユーザー情報がない場合の代替表示 -->
             @endif
+          </div>
         </div>
+
+        <div class="word-form">  
+          <div class="imageandpost" onclick="redirectToDetailPage('{{ $task->id }}')">
+                  <div class="move-box">
+                    @if($task->file_path) 
+                        <img src="{{ asset($task->file_path) }}" alt="" class="samplepic">
+                        @else
+                        <div class="no-image"></div>
+                        @endif 
+                  </div>
             
+                  <div class="card-boxes">  
+                      <div class="posttitle">   
+                      <p href="">{{ $task->title }}</p>  
+                    </div>   
+                    <div class="postcontents">
+                      <div class="postcontent list">{{ $task->body }}</div>
+                        <div class="like">
+                          @if($task->likedBy(Auth::user())->count()>0)
+                            <a href="/likes/{{ $task->likedBy(Auth::user())->firstOrfail()->id }}"><i class="far fa-thumbs-up"></i></a>
+                            @else
+                            <a href="/tasks/{{ $task->id }}/likes"><i class="fa-regular fa-thumbs-up"></i></a>
+                          @endif
+                          <div class="count">{{ $task->likes->count() }}</div>
+                        </div>
+                      </div>
+                    </div>
           </div>
 
-        <div class="imageandpost">
-          <div class="move-box">
-            @if($task->file_path) 
-                <img src="{{ asset($task->file_path) }}" alt="" class="samplepic">
-                @else
-                <div class="no-image">画像無し</div>
-                @endif 
-          </div>
-          <div class="card-boxes">  
-            <div class="posttitle">   
-              <p href="">{{ $task->title }}</p>  
-            </div>   
+                <div class="hand">
+                  <div class="destroy-btn">
+                    @if($task->user_id == Auth::user()->id)  <!-- ✅ログイン者のみ消去ボタン表示させる -->
+                    <form action="{{ route('tasks.destroy',$task->id) }}" method="post">
+                      @csrf
+                      @method('delete')
+                      <input type="submit" class="trash" value="🗑️" onclick='return confirm("本当に削除しますか？");'>
+                      @endif
+                    </form>
+                  </div>
+                </div>
 
-            <div class="postcontents">
-              <div class="postcontent list">{{ $task->body }}</div>
-                <div class="like">
-                  @if($task->likedBy(Auth::user())->count()>0)
-                    <a href="/likes/{{ $task->likedBy(Auth::user())->firstOrfail()->id }}"><i class="fa-regular fa-thumbs-up fa-rotate-180"></i></a>
-                    @else
-                    <a href="/tasks/{{ $task->id }}/likes"><i class="far fa-thumbs-up"></i></a>
-                  @endif
-                  <div class="count">{{ $task->likes->count() }}</div>
-              </div>
+            @endforeach
+            {{-- {{ dd($tasks) }} --}}
+            <div class="navigation">
+              {{ $tasks->links() }}
             </div>
-        </div>
-        
-                
-              
-              
           </div>
-
-          <div class="destroy-btn">
-            @if($task->user_id == Auth::user()->id)  <!-- ✅ログイン者のみ消去ボタン表示させる -->
-            <form action="{{ route('tasks.destroy',$task->id) }}" method="post">
-              @csrf
-              @method('delete')
-              <input type="submit" value="🗑️" onclick='return confirm("本当に削除しますか？");'>
-              @endif
-              <a href="{{ route('tasks.show',$task->id) }}" class="">show more</a>
-            </form>
-        </div>
-
-          @endforeach
-          {{-- {{ dd($tasks) }} --}}
-          <div class="navigation">
-            {{ $tasks->links() }}
-          </div>
-        </div>
     </div>
+  <script>
+    function redirectToDetailPage(taskId){
+        window.location.href = '/tasks/' + taskId;
+    }
+  </script>
 </body>
 </html>

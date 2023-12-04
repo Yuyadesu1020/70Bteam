@@ -36,7 +36,7 @@
                 <div class="hidden  px-6 py-4 sm:block regist">
                     {{-- fixed top-0 right-0 --}}
                     @auth
-                        <a href="{{ url('/home') }}" class="text-decoration">Home</a>
+                        <a href="{{ url('/tasks') }}" class="text-decoration">一覧ページへ</a>
                     @else
                         <a href="{{ route('login') }}" class="text-decoration">Log in</a>
 

@@ -102,9 +102,13 @@
 
           <div class="like">
             @if($task->likedBy(Auth::user())->count()>0)
-              <a href="/likes/{{ $task->likedBy(Auth::user())->firstOrfail()->id }}"><i class="fa-regular fa-thumbs-up fa-rotate-180"></i></a>
-            @else
-                  <a href="/tasks/{{ $task->id }}/likes"><i class="far fa-thumbs-up"></i></a>
+              <a href="{{ route('likes.destroy', ['like_id' => $task->likedBy(Auth::user())->firstOrFail()->id, 'from_show' => true]) }}">
+                <i class="fa-regular fa-thumbs-up fa-rotate-180"></i>
+              </a>
+            @else 
+              <a href="{{ route('likes.store', ['task_id' => $task->id, 'from_show' => true]) }}">
+                <i class="far fa-thumbs-up"></i>
+              </a>
             @endif
             <div class="count">{{ $task->likes->count() }}</div>
           </div>

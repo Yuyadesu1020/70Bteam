@@ -1,17 +1,70 @@
-h1{
-    text-align: center;
-    
+.profile-page{
+    background-color: rgba(161, 231, 231, 0.3);
 }
-.card-boxes{
-    width: 500px;
-    height: 500px;
-    border: solid 5px black;
-    border-radius: 10%;
+
+.username{
     text-align: center;
-    margin: 0 auto 20px auto;
+    /* border: 1px solid black; */
+    font-size: 50px;
+    padding-top: 30px;
+    font-family: cursive;
+}
+
+.profile-box{
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    /* margin: 0 auto 0 auto; */
+}
+
+.card-boxes{
+    height: 55vh;
+    border: solid 2px black;
+    border-radius: 10%;
+    background-color: rgb(250,240,230,0.9);
+}
+
+.title-list{
+    text-align: center;
+    margin-top: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+.show-image{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.postcontent{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.like{
+    display: flex;
+    gap: 10px;
+}
+
+.likeortrash{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin-top: 50px;
+    gap: 20px;
+    margin-right: 20px;
+}
+
+.trash{
+    border: none;
+    background-color: rgb(250,240,230,0.9);
 }
 
 img{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
 }

@@ -48,13 +48,13 @@
                       </a>
 
                       <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href=""
+                          <a class="dropdown-item" href="{{ route('logout') }}"
                              onclick="event.preventDefault();
                                            document.getElementById('logout-form').submit();">
                               {{ __('Logout') }}
                           </a>
 
-                          <form id="logout-form" action="" method="POST" class="d-none">
+                          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                               @csrf
                           </form>
                       </div>
@@ -68,7 +68,7 @@
     <div class="own-card">
       <div class="card-flex">
 
-        <div class="username"><a class="name" href="">{{ $task->user->name }}</a>
+        <div class="username"><a class="name" href="{{ route('tasks.profile',[$task->user->id]) }}">{{ $task->user->name }}</a>
           {{-- {{ route('show',[$task->user->id]) }} --}}</div>
 
         <div class="card-out">

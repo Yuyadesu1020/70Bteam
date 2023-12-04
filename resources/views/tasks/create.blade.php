@@ -89,12 +89,20 @@
                 </div>
 
                 <div class="create-image">
+                    <!-- 既存の画像を表示 -->
                     <img id="currentImage" src="{{ asset($task->file_path) }}" alt="Current Image" class="old-image">
 
                     <label for="postimage" class="imagine">{{ __('プロフィール画像（サイズは1024Kbteまで）') }}</label>
                     <div class="show">
-                        {{-- 写真ファイル選択 --}}
-                        <input type="file" id="postimage"  name="postimage">
+                        {{-- 写真ファイル選択
+                        <input type="file" id="postimage"  name="postimage"> --}}
+
+                         <!-- 新しい画像をアップロードするためのファイル選択 -->
+                         <div class="new-image">
+                            <label for="newImage">📷 : </label>
+                            <input type="file" id="newImage" name="newImage" style="display: none;">
+                            <button id="openDialog">画像を選択</button>
+                        </div>
                         {{-- ✅エラー文表示 --}}
                         @error('postimage')
                         <p class="text-red-500" style="color: red;">{{ $message }}</p>

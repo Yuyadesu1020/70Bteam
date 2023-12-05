@@ -98,25 +98,25 @@
                 </div>
 
                 <div class="create-image">
-                    <div class="post-image">
-                        <!-- 投稿する画像を表示 -->
-                        <img id="currentImage" src="{{ asset($task->file_path) }}" alt="Choose your image" class="old-image">
-
+                    <!-- 投稿する画像を表示 -->
+                    <div class="show">  
                         
-                        <div class="show">
-                            <label for="postimage" class="imagine">{{ __('プロフィール画像（サイズは1024Kbteまで）') }}</label>
-                            <!-- 新しい画像をアップロードするためのファイル選択 -->
-                            <div class="new-image">
-                                
-                                <label for="postimage">📷 : </label>
-                                <input type="file" id="postimage" name="postimage" style="display: none;">
-                                <button id="openDialog">画像を選択</button>
-                            </div>
-                            {{-- ✅エラー文表示 --}}
-                            @error('postimage')
-                            <p class="text-red-500" style="color: red;">{{ $message }}</p>
-                            @enderror
+                        <div>
+                            <img id="currentImage" src="{{ asset($task->file_path) }}" alt="Current Image" class="old-image">
                         </div>
+                         <!-- 新しい画像をアップロードするためのファイル選択 -->
+                         <div class="new-image">
+                            <label for="postimage" class="imagine">{{ __('プロフィール画像（サイズは1024Kbteまで）') }}</label>
+                            <div class="select">
+                                <label for="postimage" class="camera-image">📷 : </label>
+                                <input type="file" id="postimage" name="postimage" style="display: none;">
+                                <button class="select-image" id="openDialog">画像を選択</button>
+                            </div>
+                        </div>
+                        {{-- ✅エラー文表示 --}}
+                        @error('postimage')
+                        <p class="text-red-500" style="color: red;">{{ $message }}</p>
+                        @enderror
                     </div>
                     <script>
                         document.addEventListener('DOMContentLoaded', function() {

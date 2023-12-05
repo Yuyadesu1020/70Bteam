@@ -103,17 +103,33 @@ textarea{
 .old-image{
     width: 30vw;
     height: 45vh;
+    margin-right: 40px;
 }
 
 .show{
     display: flex;
     flex-direction: row;
-    margin-top: 50px;
+    justify-content: center;
 }
 
-/* .new-image{
-    margin-top: 50px;
-} */
+.new-image{
+   display: flex;
+   flex-direction: column;
+   /* justify-content: center; */
+}
+
+.camera-image{
+    margin-right: 10px;
+}
+
+.select{
+    display: flex;
+    flex-direction: row;
+}
+
+.select-image{
+    width: 120px;
+}
 
 .post-btn{
     border: 1px solid rgb(0, 0, 0, 0.4);

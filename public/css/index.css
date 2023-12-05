@@ -35,7 +35,7 @@ body{
     /* border: 1px solid rgb(0,0,0,0.3); */
     /* border-radius: 30px; */
     width: 70vw;
-    height: 30vh;
+    height: 28vh;
     background-color: rgb(250,240,230,0.7);
 }
 
@@ -44,22 +44,21 @@ body{
 }
 
 .postcontents{
-    display: flex;
-    flex-direction: row;
-    
     width: 65vw;
     margin-right: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
 }
 .postcontent{
-    display: flex;
+    /* display: flex; */
     /* border-bottom: 1px solid rgb(0,0,0,0.3); */
-    padding-bottom: 30px;
+    /* padding-bottom: 30px; */
     width: 100%;
-}
-.list{
     padding-top: 30px;
     padding-left: 40px;
 }
+
 .username{ 
     padding-bottom: 30px;
     margin-left: 10px;
@@ -78,18 +77,16 @@ body{
 }
 
 .click-btn{
-    margin-top: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: right;
 }
 
 .like{
     /* border: 1px solid black; */
     display: flex;
     flex-direction: row;
-    margin-left: 120px;
-    margin-top: 200px;
+    /* margin-left: 120px; */
+    /* margin-top: 150px; */
 }
 
 .fa-thumbs-up{
@@ -119,15 +116,15 @@ body{
     justify-content: right;
     margin-left: 5px;
     border: none;
-    background-color: rgba(161, 231, 231, 0.1);
+    background-color: rgba(161, 231, 231, 0.01);
 }
 
-.destroy-btn{
-   margin-top: 200px;
-}
+/* .destroy-btn{
+   margin-top: 150px;
+} */
 
 .navigation{
-    padding-bottom: 90px;
+    padding-bottom: 80px;
     display: flex;
     flex-direction: row;
     justify-content: center;

@@ -85,7 +85,11 @@
                     <label for="" class="label-title">Schedule  :
                     </label>
                     <input type="text" class="change-title" value="{{ $task->title }}" name="title">
-                    {{-- {{ $tasks->title }} valueのとこへ--}}
+
+                    {{-- deadlineの編集 --}}
+                    <label for="">deadline:</label>
+                    <input type="date" value="{{ $task->deadline }}" name="deadline">
+                    
                 </div>
 
                 <div class="edit-content">

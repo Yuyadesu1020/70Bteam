@@ -94,6 +94,9 @@
             <div>
               <h4 class="show-title"><!--タイトルルート完了-->{{ $task->title }}</h4>
 
+              {{-- deadlineの記述 --}}
+              <p>deadline:{{ $task->deadline }}</p>
+            
               <hr>
 
               <p class="card-middle">{{ $task->body }}</p>

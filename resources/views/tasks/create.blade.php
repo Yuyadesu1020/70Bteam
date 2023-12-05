@@ -73,6 +73,10 @@
                 <div class="title">
                     <label for="" class="label-title">Schedule : </label>
                     <input type="text" class="title-form" placeholder="Put your title" name="title">
+                    
+                    {{-- deadlineの記述 --}}
+                    <label for="deadline">:</label>
+                    <input type="date" name="deadline" class="form-control" id="deadline">
                     {{-- ✅エラー文表示 --}}
                     @error('body')
                     <p class="text-red-500" style="color: red;">{{ $message }}</p>

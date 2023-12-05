@@ -37,8 +37,10 @@ class LikeController extends Controller
     //from_indexのパラメータがあるかないかで区別
     if ($request->has('from_index')) {
         return redirect()->route('tasks.index');
-    } else {
+    } else if ($request->has('from_show')){
         return redirect()->route('tasks.show', ['id' => $request->task_id]);
+    } else{
+        return redirect()->route('tasks.profile',['id' => $like->task_id]);
     }
     }
 
@@ -49,8 +51,10 @@ class LikeController extends Controller
 
     if ($request->has('from_index')) {
         return redirect()->route('tasks.index');
-    } else {
+    } else if ($request->has('from_show')){
         return redirect()->route('tasks.show', ['id' => $like->task_id]);
+    } else{
+        return redirect()->route('tasks.profile',['id' => $like->task_id]);
     }
     }
 }

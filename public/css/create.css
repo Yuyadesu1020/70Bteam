@@ -30,22 +30,48 @@ body{
 }
 
 .title{
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     border-bottom: 1px solid rgb(0,0,0,0.3);
     height: 70px;
     padding-top: 15px;
+    gap: 50px;
 }
 
 .title-form{
     border: 1px solid rgb(0,0,0,0.2);
     background-color: rgb(250,240,230,0.9);
     height: 40px;
-    width: 50vw;
+    width: 30vw;
 }
 
 .label-title{
     font-size: 20px;
+    /* margin-right: 10px; */
+}
+
+.dead-letter{
+    font-size: 20px;
     margin-right: 10px;
+    margin-top: 4px;
+}
+
+.deadline-box{
+    /* border-bottom: 1px solid rgb(0,0,0,0.3); */
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.option-date{
+    height: 40px;
+    background-color: rgb(250,240,230,0.9);
+    border: 1px solid rgb(0,0,0,0.3);
+    height: 40px;
+    width: 120px;
 }
 
 .form-content{
@@ -71,18 +97,29 @@ textarea{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 20px;
+    gap: 40px;
 }
 
 .old-image{
     width: 30vw;
-    height: 50vh;
+    height: 45vh;
 }
+
+.show{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+/* .new-image{
+    margin-top: 50px;
+} */
 
 .post-btn{
     border: 1px solid rgb(0, 0, 0, 0.4);
     border-radius: 10px;
-    width: 83px;
+    height: 40px;
+    width: 73px;
     background-color:lemonchiffon;
 }
 

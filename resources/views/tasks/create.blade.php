@@ -70,18 +70,23 @@
         <div class="create-form">
             <form action="{{ route('tasks.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
+
                 <div class="title">
-                    <label for="" class="label-title">Schedule : </label>
-                    <input type="text" class="title-form" placeholder="Put your title" name="title">
-                    
-                    {{-- deadlineの記述 --}}
-                    <label for="deadline">:</label>
-                    <input type="date" name="deadline" class="form-control" id="deadline">
-                    {{-- ✅エラー文表示 --}}
-                    @error('body')
-                    <p class="text-red-500" style="color: red;">{{ $message }}</p>
-                    @enderror
+                    <div>
+                        <label for="" class="label-title">Schedule : </label>
+                        <input type="text" class="title-form" placeholder="Put your title" name="title">
+                        {{-- ✅エラー文表示 --}}
+                        @error('body')
+                        <p class="text-red-500" style="color: red;">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="deadline-box">{{-- deadlineの記述 --}}
+                        <label for="deadline" class="dead-letter">Deadline : </label>
+                        <input type="date" name="deadline" class="option-date" id="deadline">
+                    </div>
                 </div>
+
+                
 
                 <div class="form-content">
                     <label class="label-content">Content : </label>
@@ -93,22 +98,25 @@
                 </div>
 
                 <div class="create-image">
-                    <!-- 投稿する画像を表示 -->
-                    <img id="currentImage" src="{{ asset($task->file_path) }}" alt="Current Image" class="old-image">
+                    <div class="post-image">
+                        <!-- 投稿する画像を表示 -->
+                        <img id="currentImage" src="{{ asset($task->file_path) }}" alt="Choose your image" class="old-image">
 
-                    <label for="postimage" class="imagine">{{ __('プロフィール画像（サイズは1024Kbteまで）') }}</label>
-                    <div class="show">
-                         <!-- 新しい画像をアップロードするためのファイル選択 -->
-                         <div class="new-image">
-                            
-                            <label for="postimage">📷 : </label>
-                            <input type="file" id="postimage" name="postimage" style="display: none;">
-                            <button id="openDialog">画像を選択</button>
+                        
+                        <div class="show">
+                            <label for="postimage" class="imagine">{{ __('プロフィール画像（サイズは1024Kbteまで）') }}</label>
+                            <!-- 新しい画像をアップロードするためのファイル選択 -->
+                            <div class="new-image">
+                                
+                                <label for="postimage">📷 : </label>
+                                <input type="file" id="postimage" name="postimage" style="display: none;">
+                                <button id="openDialog">画像を選択</button>
+                            </div>
+                            {{-- ✅エラー文表示 --}}
+                            @error('postimage')
+                            <p class="text-red-500" style="color: red;">{{ $message }}</p>
+                            @enderror
                         </div>
-                        {{-- ✅エラー文表示 --}}
-                        @error('postimage')
-                        <p class="text-red-500" style="color: red;">{{ $message }}</p>
-                        @enderror
                     </div>
                     <script>
                         document.addEventListener('DOMContentLoaded', function() {

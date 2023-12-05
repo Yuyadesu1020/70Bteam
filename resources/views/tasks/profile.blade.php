@@ -72,10 +72,10 @@
           @foreach($tasks as $task) 
           <div class="card-boxes">
               <div class="title-list">
-                  <p href="{{ route('tasks.show',$task->id) }}">{{ $task->title }}</p>
+                  <p href="{{ route('tasks.show',$task->id) }}" class="task-title">{{ $task->title }}</p>
                   
                   {{-- deadlineの記述 --}}
-                  <p>deadline:{{ $task->deadline }}</p>
+                  <p class="expire">Until:{{ $task->deadline }}</p>
 
               </div>
 
@@ -92,9 +92,9 @@
             <div class="likeortrash">
               <div class="like">
                 @if($task->likedBy(Auth::user())->count()>0)
-                  <a href="/likes/{{ $task->likedBy(Auth::user())->firstOrfail()->id }}"><i class="fa-regular fa-thumbs-up fa-rotate-180"></i></a>
+                  <a href="#"><i class="fa-regular fa-thumbs-up fa-rotate-180"></i></a>
                 @else
-                  <a href="/tasks/{{ $task->id }}/likes"><i class="far fa-thumbs-up"></i></a>
+                  <a href="#"><i class="far fa-thumbs-up"></i></a>
                 @endif
                 <div class="count">{{ $task->likes->count() }}</div>
               </div>

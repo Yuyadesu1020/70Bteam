@@ -100,7 +100,7 @@
                     <div class="posttitle-box">   
                       <p class="post-title" href="">{{ $task->title }}</p>
                       {{-- deadlineの記述   --}}
-                      <p>deadline:{{ $task->deadline }}</p>
+                      <p class="dead-box">Until:{{ $task->deadline }}</p>
                     </div>  
 
                     <div class="postcontents">

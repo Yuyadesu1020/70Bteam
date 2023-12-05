@@ -97,8 +97,8 @@
                   </div>
             
                 <div class="card-boxes">  
-                    <div class="posttitle">   
-                      <p href="">{{ $task->title }}</p>  
+                    <div class="posttitle-box">   
+                      <p class="post-title" href="">{{ $task->title }}</p>  
                     </div>  
 
                     <div class="postcontents">

@@ -24,4 +24,11 @@ class Task extends Model
         return Like::where('user_id',$user->id)->where('task_id',$this->id);
     }
 
+    //✅コメントモデルとのリレーションの記述
+    public function comments()
+    {
+        return $this -> hasMany('App\Models\Comment');
+    }
+
+
 }

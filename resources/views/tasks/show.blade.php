@@ -120,35 +120,61 @@
         </div>
       </div>
 
-      
+      <!-- ✅コメントする -->
+{{-- @extends('layouts.app')
+@section('content') --}}
+{{-- <div class="container"> --}}
 
-      <div class="comment-box">
-        <p class="dratft">ここにコメント打ち込む</p>
-        <div class="row justify-content-center comment-btn-margin">
-          <div class="col-md-8 comment-div">
-            <button type="button" class="comment-btn" onclick="location.href=''">comment</button>
-                    {{-- {{ route('comments.create', $tasks->id) }} --}}
-                    {{-- btn btn-primary --}}
-          </div>
-        </div>
-        <div class="row justify-content-center">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-8">
+        <form action="{{ route('tasks.store') }}" method="post">
+            @csrf
+            <input type="hidden" name="task_id" value="{{ $task->id }}">
+            <div class="form-group">
+        </form>
+         <!-- ✅コメント一覧 -->
+        
+         <div class="row justify-content-center">
           <div class="col-md-8 mt-5">
-              <p>comment list</p>
-              {{-- @foreach($tasks->comments as $comment) --}}
-                <div class="card mt-3">
-                    <h5 class="card-header">poster：</h5>
-                    {{-- {{ $comment->user->name }} --}}
-                    <div class="card-body">
-                        <p class="card-text"></p>
-                        {{-- {{ $comment->body }} --}}
-                        <p class="card-title">created at：</p>
-                        {{-- {{ $comment->created_at }} --}}
-                    </div>
-                </div>
-              {{-- @endforeach --}}  
-          </div> 
-        </div>
+            コメント一覧
+            @foreach ($task->comments as $comment)
+            @csrf
+              <div class="card mt-3">
+                  <h5 class="card-header">投稿者：{{ $comment->user->name }}</h5>
+                  <div class="card-body">
+                      <h5 class="card-title">投稿日時：{{ $comment->created_at }}</h5>
+                      <p class="card-text">内容：{{ $comment->body }}</p>
+                  </div>
+              </div>
+            @endforeach
+            </div>
+          </div>
+          
+        <!-- ✅コメント投稿 -->
+        <form action="{{ route('comments.store') }}" method="post">
+          @csrf
+          <input type="hidden" name="task_id" value="{{ $task->id }}">
+          <label>コメント</label>
+          <textarea class="form-control" 
+          placeholder="内容" rows="5" name="body"></textarea>
       </div>
+      {{-- <button type="submit" class="btn btn-primary mt-3">コメントする</button> --}}
+      <button type="submit" class="btn btn-primary">コメントする</button>
+    </form>
+    </div>
+  </div>
+
+{{-- </div> --}}
+
+<div class="row justify-content-center">
+  <div class="col-md-8">
+          {{-- <button type="button" class="btn btn-primary" onclick="location.href='{{ route('tasks.create', $task->id) }}'">コメントする</button> --}}
+  </div>
+</div>
+
+
+
+      
     </div>
 </body>
 </html>

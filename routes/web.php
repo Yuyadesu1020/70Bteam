@@ -56,3 +56,9 @@ Route::get('/user/show{id}', [App\Http\Controllers\UserController::class, 'show'
 
 //profile用のroute
 Route::get('/users/{user}/posts', [App\Http\Controllers\UserController::class, 'posts'])->name('user_posts');
+
+// //✅コメント機能(作成)のroute
+Route::get('/show', [App\Http\Controllers\CommentController::class, 'create'])->name('comments.create');
+
+// //✅コメント機能(保存)のroute
+Route::post('/show', [App\Http\Controllers\CommentController::class, 'store'])->name('comments.store');

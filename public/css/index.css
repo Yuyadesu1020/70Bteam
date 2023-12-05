@@ -6,6 +6,12 @@ body{
    height: 200vh;
 }
 
+@media screen and (max-width: 500px) {
+    .pageface{
+        height: 150vh;
+     }
+}
+
 .form-index{
     width: 80vw;
     margin: -50px auto 0 auto;
@@ -41,11 +47,21 @@ body{
 
 .posttitle-box{
     border-bottom: 1px solid rgb(0,0,0,0.3);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .post-title{
     padding-top: 30px;
     padding-left: 40px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    font-weight:bolder;
+}
+
+.dead-box{
+    padding-top: 30px;
 }
 
 .postcontents{

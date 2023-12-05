@@ -116,6 +116,27 @@
           @endforeach
         </div> 
       </div>
+
+      <script>
+        // 仮の投稿数
+        var postCount = 10;
+
+        // 背景色を変更する関数
+        function updateBackgroundColor() {
+            var profilePage = document.querySelector('.profile-page');
+            var backgroundColor = 'rgba(161, 231, 231, ' + (0.1 + postCount * 0.02) + ')';
+            profilePage.style.backgroundColor = backgroundColor;
+        }
+
+        // ページ読み込み時に初回の背景色を設定
+        window.addEventListener('DOMContentLoaded', updateBackgroundColor);
+
+        // 投稿数が変わった場合に背景色を更新
+        function onPostCountChange(newPostCount) {
+            postCount = newPostCount;
+            updateBackgroundColor();
+        }
+      </script>
     
 </body>
 </html>

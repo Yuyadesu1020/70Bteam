@@ -98,7 +98,9 @@
             
                 <div class="card-boxes">  
                     <div class="posttitle-box">   
-                      <p class="post-title" href="">{{ $task->title }}</p>  
+                      <p class="post-title" href="">{{ $task->title }}</p>
+                      {{-- deadlineの記述   --}}
+                      <p>deadline:{{ $task->deadline }}</p>
                     </div>  
 
                     <div class="postcontents">

@@ -18,6 +18,7 @@ class CreateTasksTable extends Migration
             $table->integer('user_id');
             $table->text('title');
             $table->text('body');
+            $table->date('deadline');
             $table->string('file_name')->nullable();
             $table->string('file_path')->nullable();
             $table->timestamps();

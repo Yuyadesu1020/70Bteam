@@ -73,6 +73,10 @@
           <div class="card-boxes">
               <div class="title-list">
                   <p href="{{ route('tasks.show',$task->id) }}">{{ $task->title }}</p>
+                  
+                  {{-- deadlineの記述 --}}
+                  <p>deadline:{{ $task->deadline }}</p>
+
               </div>
 
               <div class="show-image">

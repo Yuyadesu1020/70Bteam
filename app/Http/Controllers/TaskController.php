@@ -71,6 +71,7 @@ class TaskController extends Controller
     // }
         $task->title = $request->title;
         $task->body = $request->body;
+        $task->deadline = $request->deadline;
         $task->user_id = Auth::id();
         $task->save();
 
@@ -97,7 +98,7 @@ class TaskController extends Controller
 
         $task->title = $request->title;
         $task->body = $request->body;
-        //$task->file_name = $task->file_path;
+        $task->deadline = $request->deadline;
 
         // 新しい画像が送信されたかどうかを確認
     if ($request->hasFile('newImage')) {

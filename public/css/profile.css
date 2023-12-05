@@ -1,5 +1,11 @@
+body{
+    height: 100%;
+    margin: 0;
+}
+
 .profile-page{
     background-color: rgba(161, 231, 231, 0.3);
+    padding: 0 20px 20px 20px;
 }
 
 .username{
@@ -19,7 +25,7 @@
 }
 
 .card-boxes{
-    height: 55vh;
+    height: 65vh;
     border: solid 2px black;
     border-radius: 10%;
     background-color: rgb(250,240,230,0.9);
@@ -30,6 +36,14 @@
     margin-top: 20px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
+}
+
+.task-title{
+    font-size: 20px;
+}
+
+.expire{
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .show-image{
@@ -53,7 +67,7 @@
     display: flex;
     flex-direction: row;
     justify-content: right;
-    margin-top: 50px;
+    margin-top: 20px;
     gap: 20px;
     margin-right: 20px;
 }

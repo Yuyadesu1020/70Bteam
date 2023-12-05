@@ -144,3 +144,13 @@ div > .comment-box{
 .comment-btn-margin{
     margin-bottom: -50px;
 }
+
+.comment-list{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.card-body{
+    background-color: rgb(250,240,230,0.9);
+}

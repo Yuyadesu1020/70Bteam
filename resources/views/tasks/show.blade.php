@@ -149,26 +149,26 @@
         <form action="{{ route('comments.store') }}" method="post">
           @csrf
           <input type="hidden" name="task_id" value="{{ $task->id }}">
-          <label>コメント</label>
-          <textarea class="form-control" placeholder="内容" rows="5" name="body"></textarea>
-          <button type="submit" class="btn btn-primary">コメントする</button>
+          <label>Comment</label>
+          <textarea class="form-control" placeholder="content" rows="5" name="body"></textarea>
+          <button type="submit" class="btn btn-primary">Post a Comment</button>
         </div>
           {{-- <button type="submit" class="btn btn-primary">コメントする</button> --}}
         </form>
 
               <!-- ✅コメント一覧表示 -->
-              <div class="row justify-content-center">
+              <div class="comment-list">
                 <div class="col-md-8 mt-5">
-                    コメント一覧
+                  Comment List
                     @foreach ($task->comments as $comment)
                     @csrf
-                      <div class="card mt-3">
-                        <h5 class="card-header">投稿者：{{ $comment->user->name }}</h5>
-                        <div class="card-body">
-                        <h5 class="card-title">投稿日時：{{ $comment->created_at }}</h5>
-                        <p class="card-text">内容：{{ $comment->body }}</p>
+                     <div class="card mt-3">
+                        <h5 class="card-header">Author：{{ $comment->user->name }}</h5>
+                      <div class="card-body">
+                        <h5 class="comment-title">Post Date：{{ $comment->created_at }}</h5>
+                        <p class="comment-text">Content：{{ $comment->body }}</p>
                       </div>
-                  </div>
+                   </div>
                     @endforeach
               </div>
         </div>

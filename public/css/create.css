@@ -67,10 +67,16 @@ textarea{
     margin-right: 10px;
 }
 
-.submit-box{
+.post-image{
     display: flex;
-    justify-content: right;
-    margin-right: 30px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.old-image{
+    width: 30vw;
+    height: 50vh;
 }
 
 .post-btn{
@@ -80,7 +86,8 @@ textarea{
     background-color:lemonchiffon;
 }
 
-.old-image{
-    width: 100px;
-    height: 100px;
+.submit-box{
+    display: flex;
+    justify-content: right;
+    margin-right: 30px;
 }

@@ -41,14 +41,16 @@ class TaskController extends Controller
         // ]);
 
         $validated = $request->validate([
-            'title' => 'required|unique:tasks|max:200',
-            'body' => 'required',
+            'title' => 'required|unique:tasks|max:30',
+            'body' => 'required|unique:tasks|max:140',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // postimageを追加して画像が選択されていなくても良いことを示す
         ],[
             'title.required'=> '※ Inform your schedule',
             'title.unique' => '※ This title exists',
-            'title.max' => '※Your title needs to be under 200',
+            'title.max' => '※Your title needs to be under 30',
             'body.required' => '※ Inform your content',
+            'body.unique' => '※ This body exists',
+            'body.max' => '※Your body needs to be under 140',
         ]);
         
 

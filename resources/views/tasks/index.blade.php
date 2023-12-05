@@ -69,6 +69,7 @@
           </div>
         </div>
     </nav>
+  
     <div class="pageface">
       <div class="card-head" style="opacity: 0.9">? What to do ?</div>
 
@@ -95,55 +96,54 @@
                         @endif 
                   </div>
             
-                  <div class="card-boxes">  
-                      <div class="posttitle">   
+                <div class="card-boxes">  
+                    <div class="posttitle">   
                       <p href="">{{ $task->title }}</p>  
                     </div>   
-                    <div class="postcontents">
-                      <div class="postcontent list">{{ $task->body }}</div>
-                        <div class="click-btn">
-                          <div class="like">
-                            @if($task->likedBy(Auth::user())->count()>0)
-                              {{-- <a href="/likes/{{ $task->likedBy(Auth::user())->firstOrfail()->id }}"><i class="far fa-thumbs-up"></i></a> --}}
-                              <a href="{{ route('likes.destroy', ['like_id' => $task->likedBy(Auth::user())->firstOrFail()->id, 'from_index' => true]) }}">
-                                {{-- <i class="fa-regular fa-thumbs-up fa-rotate-180"></i> --}}
-                                <i class="fa-solid fa-thumbs-up"></i>
-                              </a>
-                              @else
-                              {{-- <a href="/tasks/{{ $task->id }}/likes"><i class="fa-regular fa-thumbs-up"></i></a> --}}
-                              <a href="{{ route('likes.store', ['task_id' => $task->id, 'from_index' => true]) }}">
-                                <i class="far fa-thumbs-up"></i>
-                              </a>
-                            @endif
-                            <div class="count">{{ $task->likes->count() }}</div>
-                          </div>
-                          <div class="trash">
-                            <div class="destroy-btn">
-                              @if($task->user_id == Auth::user()->id)  <!-- ✅ログイン者のみ消去ボタン表示させる -->
-                              <form action="{{ route('tasks.destroy',$task->id) }}" method="post">
-                                @csrf
-                                @method('delete')
-                                <input type="submit" class="trash" value="🗑️" onclick='return confirm("本当に削除しますか？");'>
-                                @endif
-                              </form>
-                            </div>
-                          </div>
-                        </div>
+                  <div class="postcontents">
+                    <div class="postcontent list">{{ $task->body }}</div>
+                  </div>
+                  
+                  <div class="click-btn">
+                    <div class="like">
+                      @if($task->likedBy(Auth::user())->count()>0)
+                        <a href="{{ route('likes.destroy', ['like_id' => $task->likedBy(Auth::user())->firstOrFail()->id, 'from_index' => true]) }}">
+                            <i class="fa-solid fa-thumbs-up"></i>
+                        </a>
+                      @else
+                        <a href="{{ route('likes.store', ['task_id' => $task->id, 'from_index' => true]) }}">
+                            <i class="far fa-thumbs-up"></i>
+                        </a>
+                      @endif
+                      <div class="count">{{ $task->likes->count() }}</div>
+                    </div>
+
+                    <div class="trash-card">
+                      <div class="destroy-btn">
+                        @if($task->user_id == Auth::user()->id)  <!-- ✅ログイン者のみ消去ボタン表示させる -->
+                        <form action="{{ route('tasks.destroy',$task->id) }}" method="post">
+                          @csrf
+                          @method('delete')
+                            <input type="submit" class="trash" value="🗑️" onclick='return confirm("本当に削除しますか？");'>
+                          </form>
+                        @endif
                       </div>
                     </div>
+                  </div>
+                </div>
           </div>
-
+        </div>
             @endforeach
-          </div>
-          {{-- {{ dd($tasks) }} --}}
-          <div class="navigation">
-            {{ $tasks->links() }}
-          </div>
+    </div>
+    <div class="navigation">
+      {{ $tasks->links() }}
     </div>
   <script>
     function redirectToDetailPage(taskId){
         window.location.href = '/tasks/' + taskId;
     }
+
+
   </script>
 </body>
 </html>

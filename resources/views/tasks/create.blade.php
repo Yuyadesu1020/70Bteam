@@ -102,7 +102,7 @@
                     <div class="show">  
                         
                         <div>
-                            <img id="currentImage" src="{{ asset($task->file_path) }}" alt="Current Image" class="old-image">
+                            <img id="currentImage" src="{{ asset($task->file_path) }}" alt="Choose your image" class="old-image">
                         </div>
                          <!-- 新しい画像をアップロードするためのファイル選択 -->
                          <div class="new-image">

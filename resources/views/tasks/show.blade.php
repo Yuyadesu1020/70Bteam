@@ -73,7 +73,7 @@
 
         <div class="card-out">
           <img class="show-img" src="{{ asset($task->file_path) }}" alt="投稿の画像">
-          {{-- <div class="handwork"> --}}
+          <div class="handwork">
           @if(Auth::check() && $task->user_id == Auth::user()->id) <!-- ✅ログイン者のみ編集・削除が可能 -->
             <div class="pencil-box">
               <a class="pencil" href="{{ route('tasks.edit',$task->id) }}">✏️</a>
@@ -82,23 +82,24 @@
               <form action='{{ route('tasks.destroy', $task->id) }}' method='post'>
                 @csrf
                 @method('delete')
-                <input type='submit' style="font-size: 33px;" value='🗑️'  class="btn" 
+                <input type='submit' style="font-size: 33px;" value='🗑️'  class="trash" 
                 {{-- jsの確認ダイヤル/ボタンをクリックすると確認表示が出る --}}
                 onclick='return confirm("本当に削除しますか？");'>
               </form>
             </div>
           @endif
-          {{-- </div> --}}
+          </div>
         </div>
 
-        <div>
+        <div class="whole-card">
           <div class="incard">
             <div>
-              <h4 class="show-title"><!--タイトルルート完了-->{{ $task->title }}</h4>
+              <div class="first-row">
+                <h4 class="show-title"><!--タイトルルート完了-->{{ $task->title }}</h4>
+                {{-- deadlineの記述 --}}
+                <p class="deadline">deadline:{{ $task->deadline }}</p>
+              </div>
 
-              {{-- deadlineの記述 --}}
-              <p>deadline:{{ $task->deadline }}</p>
-            
               <hr>
 
               <p class="card-middle">{{ $task->body }}</p>
@@ -123,40 +124,30 @@
       </div>
 
       <!-- ✅コメントする -->
-  <div class="row justify-content-center mt-5">
-    <div class="col-md-8">
-        <form action="{{ route('tasks.store') }}" method="post">
-            @csrf
-            <input type="hidden" name="task_id" value="{{ $task->id }}">
-      <div class="form-group">
-        </form>
-      {{-- <!-- ✅コメント一覧表示 -->
-        <div class="row justify-content-center">
-          <div class="col-md-8 mt-5">
-              コメント一覧
-              @foreach ($task->comments as $comment)
-              @csrf
-                <div class="card mt-3">
-                  <h5 class="card-header">投稿者：{{ $comment->user->name }}</h5>
-                  <div class="card-body">
-                  <h5 class="card-title">投稿日時：{{ $comment->created_at }}</h5>
-                  <p class="card-text">内容：{{ $comment->body }}</p>
-                </div>
-            </div>
-              @endforeach
-        </div> --}}
-          </div>
-          
+      <div class="comment-area">
+
+        <div class="">
+            <form class="form" action="{{ route('tasks.store') }}" method="post">
+                @csrf
+                <input type="hidden" name="task_id" value="{{ $task->id }}">
+            </form>
+        </div> 
         <!-- ✅コメント投稿 -->
-        <form action="{{ route('comments.store') }}" method="post">
-          @csrf
-          <input type="hidden" name="task_id" value="{{ $task->id }}">
-          <label>Comment</label>
-          <textarea class="form-control" placeholder="content" rows="5" name="body"></textarea>
-          <button type="submit" class="btn btn-primary">Post a Comment</button>
+        <div class="comment-box">
+          <form action="{{ route('comments.store') }}" method="post">
+            @csrf
+            <div class="comment-input">
+              <input type="hidden" name="task_id" value="{{ $task->id }}">
+              <label class="word-comment">Comment</label>
+              <textarea class="text-box" placeholder="content" rows="5" name="body"></textarea>
+            </div>
+            <div class="big-btn-box">
+              <div class="button-box">
+                <button type="submit" class="btn btn-primary">add comment</button>
+              </div>
+            </div>
+          </form>
         </div>
-          {{-- <button type="submit" class="btn btn-primary">コメントする</button> --}}
-        </form>
 
               <!-- ✅コメント一覧表示 -->
               <div class="comment-list">

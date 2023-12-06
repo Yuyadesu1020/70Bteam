@@ -6,7 +6,7 @@ body{
 .profile-page{
     background-color: rgba(161, 231, 231, 0.3);
     padding: 0 20px 20px 20px;
-    height: 150vh; 
+    height: 200vh; 
 }
 
 .username{
@@ -56,7 +56,8 @@ body{
 .postcontent{
     text-align: center;
     margin-top: 20px;
-    margin-bottom: 20px;
+    /* margin-bottom: 2px; */
+    /* overflow: hidden; */
 }
 
 .like{
@@ -68,13 +69,14 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: right;
-    margin-top: 20px;
+    /* margin-top: 2px; */
     gap: 20px;
     margin-right: 20px;
 }
 
 .trash{
     border: none;
+    border-radius: 20%;
     background-color: rgb(250,240,230,0.9);
 }
 

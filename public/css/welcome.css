@@ -1,17 +1,21 @@
-html{
-    margin: 0;
-}
+
 body{
+    height: 100%;
     margin: 0;
     padding: 0;
 }
+
+.blur {
+    overflow: hidden;
+  }
+
 .content{
     background-image: url(../image/top-view.jpg);
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    /* position: absolute; */
+    position: absolute;
     top: 2px;
     /* border: 1px solid black; */
 }
@@ -52,30 +56,63 @@ h2{
 } */
 
 .text-decoration{
-    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    font-size: 25px;
     font-weight: bold;
-    padding: 10px 40px;
+    padding: 10px 20px;
     margin: 40px;
     border: 3px solid black;
-    border-radius: 30px;
+    border-radius: 17px;
+    transition: all .6s;
 }
 
 .regist{
-    text-align: center;
+    /* text-align: center;
     position: absolute;
     top: 550px;
-    left: 300px;
+    left: 300px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 300px;
 }
 
 a:hover{
     background-color: #FFEBCD;
+    color: black;
 }
 
 @media screen and (max-width: 640px) {
+    body{
+        width: 100%;
+        height: 50vh;
+    }
+
     .content{
-    position: relative;
-    width: 100vw;
-    height: 100vh;
+        height: 80vh;
+    }
+
+    .title{
+        margin-top: 80px;
+    }
+
+    h1{
+        font-size: 50px;
+        text-align: left;
+        padding-left: 30px;
+    }
+
+    h2{
+        font-size:20px;
+        letter-spacing: 2px;
+        text-align: left;
+        padding-left: 50px;
+    }
+
+    .secondh2{
+        padding-left: 70px;
     }
 
     .content::after {
@@ -100,24 +137,28 @@ a:hover{
         z-index: 1;
     }
 
+    .welcome{
+        margin-top: -40px;
+    }
+
     .text-decoration{
-        font-size: 20px;
-        font-weight: bold;
-        padding: 5px 20px;
-        margin: 10px;
-        border: 3px solid black;
-        border-radius: 30px;
+         font-size: 10px;
+         width: 70px;
+         text-align: center;
 
     }
+
+    /* .log-in{
+        width: 80px;
+    } */
     
     .regist{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 100px;
-        position: relative;
-        top: auto;
-        left: auto;
+        /* width: 50px; */
+        /* margin-left: 170px; */
+        /* display: flex;
+        flex-direction: row;
+        justify-content: left; */
     }
+
 
 }

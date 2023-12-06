@@ -74,10 +74,10 @@
         <div class="card-out">
           <img class="show-img" src="{{ asset($task->file_path) }}" alt="投稿の画像">
           {{-- <div class="handwork"> --}}
+          @if(Auth::check() && $task->user_id == Auth::user()->id) <!-- ✅ログイン者のみ編集・削除が可能 -->
             <div class="pencil-box">
               <a class="pencil" href="{{ route('tasks.edit',$task->id) }}">✏️</a>
             </div>
-            @if(Auth::check() && $task->user_id == Auth::user()->id)
             <div class="erase-box">
               <form action='{{ route('tasks.destroy', $task->id) }}' method='post'>
                 @csrf
@@ -87,7 +87,7 @@
                 onclick='return confirm("本当に削除しますか？");'>
               </form>
             </div>
-            @endif
+          @endif
           {{-- </div> --}}
         </div>
 

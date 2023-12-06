@@ -1,13 +1,12 @@
 body{
-    height: 100%;
+    height: auto;
     margin: 0;
 }
 
 .profile-page{
     background-color: rgba(161, 231, 231, 0.3);
     padding: 0 20px 20px 20px;
-    min-height: 100vh; /* 最小の高さを設定 */
-    transition: background-color 0.5s ease; /* 色の変化をスムーズにするためのトランジション */
+    height: 150vh; 
 }
 
 .username{
@@ -85,8 +84,15 @@ img{
     border-radius: 10%;
 }
 
-@media screen and (max-width: 500px) {
-    .profile-box{
-        display: none;
+
+@media screen and (max-width: 700px) {
+
+    .profile-page{
+        height: auto; 
     }
- }
+
+    .profile-box{
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -80,7 +80,8 @@
                         <p class="text-red-500" style="color: red;">{{ $message }}</p>
                         @enderror
                     </div>
-                    <div class="deadline-box">{{-- deadlineの記述 --}}
+                    {{-- deadlineの記述 --}}
+                    <div class="deadline-box">
                         <label for="deadline" class="dead-letter">Deadline : </label>
                         <input type="date" name="deadline" class="option-date" id="deadline">
                     </div>

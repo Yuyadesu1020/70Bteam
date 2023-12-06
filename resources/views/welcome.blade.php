@@ -33,7 +33,7 @@
                 <h2 class="secondh2">To make your habit</h2>
             </div>
             @if (Route::has('login'))
-                <div class="hidden  px-6 py-4 sm:block regist">
+                <div class="px-6 py-4 sm:block regist">
                     {{-- fixed top-0 right-0 --}}
                     @auth
                         <a href="{{ url('/tasks') }}" class="text-decoration">一覧ページへ</a>

@@ -90,7 +90,7 @@
             </div>
 
             <div class="likeortrash">
-              <div class="like">
+              {{-- <div class="like">
                 @if($task->likedBy(Auth::user())->count()>0)
                 <a href="{{ route('likes.destroy', ['like_id' => $task->likedBy(Auth::user())->firstOrFail()->id, 'from_profile' => true]) }}">
                   <i class="fa-solid fa-thumbs-up"></i>
@@ -101,7 +101,7 @@
                 </a>
                 @endif
                 <div class="count">{{ $task->likes->count() }}</div>
-              </div>
+              </div> --}}
               <div class="move-box">
                 <div class="destroy-btn">
                   @if($task->user_id == Auth::user()->id)  <!-- ✅ログイン者のみ消去ボタン表示させる -->

@@ -13,4 +13,9 @@ class Like extends Model
     {
         return $this->belongsTo('App\Models\User');
     }
+
+    // public function task()
+    // {
+    //     return $this->belongsTo('App\Models\Task');
+    // }
 }

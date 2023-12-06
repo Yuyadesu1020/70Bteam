@@ -96,4 +96,10 @@ img{
         display: flex;
         flex-direction: column;
     }
+
+    .postcontent{
+        margin-top: 10px;
+        overflow: scroll;
+        height: 100px;
+    }
 }

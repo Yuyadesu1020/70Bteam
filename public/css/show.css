@@ -228,6 +228,11 @@ form{
         margin-left: -20px;
     }
 
+    .card-middle{
+        overflow: scroll;
+        height:150px;
+    }
+
     .handwork{
         display: flex;
         flex-direction: row;

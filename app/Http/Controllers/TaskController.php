@@ -129,35 +129,4 @@ class TaskController extends Controller
 
         return redirect()->route('tasks.index');
     }
-
-
-    // function uploadImage(Request $request, $task_id)
-    // {
-    //     // タスクを取得
-    //     $task = Task::find($task_id);
-
-    //     // フォームから送信された画像を取得
-    //     $image = $request->file('image');
-
-    //     if ($image) {
-    //         // 画像を保存するためのファイル名を作成
-    //         $imageName = time() . '_' . $image->getClientOriginalName();
-
-    //         // 画像を public/storage/images ディレクトリに保存
-    //         $image->storeAs('public/images', $imageName);
-
-    //         // 以前の画像が存在する場合は削除する（オプション）
-    //         if ($task->file_name) {
-    //             Storage::delete('public/images/' . $task->file_name);
-    //         }
-
-    //         // タスクの画像情報を更新
-    //         $task->file_name = $imageName;
-    //         $task->file_path = 'storage/images/' . $imageName;
-    //         $task->save();
-    //     }
-
-    //     return redirect()->route('tasks.index');
-    // }
-
 }

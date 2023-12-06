@@ -41,7 +41,7 @@ body{
 
 .title-form{
     border: 1px solid rgb(0,0,0,0.2);
-    background-color: rgb(250,240,230,0.9);
+    background-color: white;
     height: 40px;
     width: 30vw;
 }
@@ -68,7 +68,7 @@ body{
 
 .option-date{
     height: 40px;
-    background-color: rgb(250,240,230,0.9);
+    background-color: white;
     border: 1px solid rgb(0,0,0,0.3);
     height: 40px;
     width: 120px;
@@ -83,7 +83,7 @@ body{
 
 textarea{
     border: 1px solid rgb(0,0,0,0.2);
-    background-color: rgb(250,240,230,0.9);
+    background-color: white;
     width: 80%;
     height: 30vh;
 }

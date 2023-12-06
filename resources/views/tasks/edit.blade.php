@@ -87,8 +87,8 @@
                     <input type="text" class="change-title" value="{{ $task->title }}" name="title">
 
                     {{-- deadlineの編集 --}}
-                    <label for="">deadline:</label>
-                    <input type="date" value="{{ $task->deadline }}" name="deadline">
+                    <label for="" class="dead-letter">deadline:</label>
+                    <input type="date" value="{{ $task->deadline }}" name="deadline" class="dead-box">
                     
                 </div>
 

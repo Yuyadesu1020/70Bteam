@@ -95,8 +95,7 @@
                         <div class="no-image"></div>
                         @endif 
                   </div>
-                  
-              <div class="bodybox">
+            
                 <div class="card-boxes">  
                     <div class="posttitle-box">   
                       <p class="post-title" href="">{{ $task->title }}</p>
@@ -105,39 +104,35 @@
                     </div>  
 
                     <div class="postcontents">
-                      
-                        <div class="postcontent list">{{ $task->body }}
-                      
-                      </div>
-                      <div class="click-btn">
-                        <div class="like">
-                          @if($task->likedBy(Auth::user())->count()>0)
-                            <a href="{{ route('likes.destroy', ['like_id' => $task->likedBy(Auth::user())->firstOrFail()->id, 'from_index' => true]) }}">
-                                <i class="fa-solid fa-thumbs-up"></i>
-                            </a>
-                          @else
-                            <a href="{{ route('likes.store', ['task_id' => $task->id, 'from_index' => true]) }}">
-                                <i class="far fa-thumbs-up"></i>
-                            </a>
-                          @endif
-                          <div class="count">{{ $task->likes->count() }}</div>
-                        </div>
-
-                        <div class="trash-card">
-                          <div class="destroy-btn">
-                            @if($task->user_id == Auth::user()->id)  <!-- ✅ログイン者のみ消去ボタン表示させる -->
-                            <form action="{{ route('tasks.destroy',$task->id) }}" method="post">
-                              @csrf
-                              @method('delete')
-                                <input type="submit" class="trash" value="🗑️" onclick='return confirm("本当に削除しますか？");'>
-                              </form>
+                      <div class="postcontent list">{{ $task->body }}</div>
+                        <div class="click-btn">
+                          <div class="like">
+                            @if($task->likedBy(Auth::user())->count()>0)
+                              <a href="{{ route('likes.destroy', ['like_id' => $task->likedBy(Auth::user())->firstOrFail()->id, 'from_index' => true]) }}">
+                                  <i class="fa-solid fa-thumbs-up"></i>
+                              </a>
+                            @else
+                              <a href="{{ route('likes.store', ['task_id' => $task->id, 'from_index' => true]) }}">
+                                  <i class="far fa-thumbs-up"></i>
+                              </a>
                             @endif
+                            <div class="count">{{ $task->likes->count() }}</div>
                           </div>
-                        </div>
+
+                          <div class="trash-card">
+                            <div class="destroy-btn">
+                              @if($task->user_id == Auth::user()->id)  <!-- ✅ログイン者のみ消去ボタン表示させる -->
+                              <form action="{{ route('tasks.destroy',$task->id) }}" method="post">
+                                @csrf
+                                @method('delete')
+                                  <input type="submit" class="trash" value="🗑️" onclick='return confirm("本当に削除しますか？");'>
+                                </form>
+                              @endif
+                            </div>
+                          </div>
                       </div>
                     </div>
                 </div>
-              </div>
           </div>
         </div>
             @endforeach

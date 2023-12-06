@@ -121,7 +121,7 @@
         </div> 
       </div>
 
-      <script>
+      {{-- <script>
         // 仮の投稿数
         var postCount = 10;
 
@@ -140,7 +140,7 @@
             postCount = newPostCount;
             updateBackgroundColor();
         }
-      </script>
+      </script> --}}
     
 </body>
 </html>

@@ -77,8 +77,9 @@
             <div class="pencil-box">
               <a class="pencil" href="{{ route('tasks.edit',$task->id) }}">✏️</a>
             </div>
+            @if(Auth::check() && $task->user_id == Auth::user()->id)
             <div class="erase-box">
-              <form action='' method='post'>
+              <form action='{{ route('tasks.destroy', $task->id) }}' method='post'>
                 @csrf
                 @method('delete')
                 <input type='submit' style="font-size: 33px;" value='🗑️'  class="btn" 
@@ -86,6 +87,7 @@
                 onclick='return confirm("本当に削除しますか？");'>
               </form>
             </div>
+            @endif
           {{-- </div> --}}
         </div>
 

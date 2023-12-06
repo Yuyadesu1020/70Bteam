@@ -16,11 +16,11 @@ class CreateCommentsTable extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             //✅以下にコメント投稿に必要なテーブルデータを記述
-            $table->integer('task_id');
-            $table->integer('user_id');
+            $table->unsignedBigInteger('task_id');
+            $table->unsignedBigInteger('user_id');
             $table->text('body');
-            $table->foreign("user_id")->references('id')->on('users');
-            $table->foreign("task_id")->references('id')->on('tasks');
+            // $table->foreign('user_id')->references('id')->on('users');
+            // $table->foreign('task_id')->references('id')->on('tasks');
             $table->timestamps();
         });
     }

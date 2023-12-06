@@ -95,7 +95,8 @@
                         <div class="no-image"></div>
                         @endif 
                   </div>
-            
+                  
+              <div class="bodybox">
                 <div class="card-boxes">  
                     <div class="posttitle-box">   
                       <p class="post-title" href="">{{ $task->title }}</p>
@@ -104,7 +105,10 @@
                     </div>  
 
                     <div class="postcontents">
-                      <div class="postcontent list">{{ $task->body }}</div>
+                      
+                        <div class="postcontent list">{{ $task->body }}
+                      
+                      </div>
                       <div class="click-btn">
                         <div class="like">
                           @if($task->likedBy(Auth::user())->count()>0)
@@ -133,6 +137,7 @@
                       </div>
                     </div>
                 </div>
+              </div>
           </div>
         </div>
             @endforeach

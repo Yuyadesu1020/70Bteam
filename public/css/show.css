@@ -54,10 +54,16 @@ div > .incard{
     background-color: rgb(250,240,230,0.9);
     border: 1px solid black;
     border-radius: 30px;
-    width: 58vw;
+    width: 65%;
     height: 40vh;
     margin: 0 auto 0 auto;
     padding-top: 30px;
+}
+
+.first-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .show-title{
@@ -67,6 +73,9 @@ div > .incard{
     margin-left: 20px;
     margin-bottom: 0;
     width: 40vw;
+    font-size: 25px;
+    font-weight: bolder;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .card-middle{
@@ -83,6 +92,11 @@ div > .incard{
     margin-left: 170px;
 }
 
+.handwork{
+    display: flex;
+    flex-direction: row;
+}
+
 .pencil-box{
     /* margin-top: 280px;*/
     padding-left: 30px;
@@ -95,6 +109,12 @@ div > .incard{
 .pencil{
     text-decoration: none;
     font-size: 35px;
+}
+
+.trash{
+    margin: 0;
+    border: none;
+    background-color: rgba(161, 231, 231, 0.01);
 }
 
 .erase-box{
@@ -125,24 +145,41 @@ div > .incard{
     border-radius: 10%;
 }
 
-div > .comment-box{
-    width: 60vw;
-    margin: 80px auto 0 auto;
-    /* margin-top: 90px; */
-}
-
-.comment-btn{
-    border-radius: 10px;
-    background-color:rgba(222, 156, 243, 0.5)
-}
-
-.comment-div{
+form{
     display: flex;
-    justify-content: right;
+    flex-direction: column;
+    gap: 20px;
+    /* width: 100px; */
 }
 
-.comment-btn-margin{
-    margin-bottom: -50px;
+.comment-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-box{
+    width: 65%;
+}
+
+.comment-box{
+   margin: 120px auto 0 auto;
+}
+
+.word-comment{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.big-btn-box{
+    display: flex;
+    justify-content: center;
+}
+
+.button-box{
+    width: 180px;
+    display: flex;
+    justify-content: center;
 }
 
 .comment-list{
@@ -153,4 +190,63 @@ div > .comment-box{
 
 .card-body{
     background-color: rgb(250,240,230,0.9);
+}
+
+@media screen and (max-width: 700px) {
+    .show-img{
+        width: 180px;
+        height: 170px;
+        border: 5px solid darkturquoise;
+    }
+
+    .whole-card{
+        margin-bottom: 90px;
+    }
+
+    .card-out{
+        /* border: 10px solid black; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+        margin-left: 0px;
+    }
+
+    div > .first-row{
+        margin-top: -10px;
+    }
+
+    .first-row{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .show-title{
+        margin-left: -20px;
+    }
+
+    .handwork{
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        top:770px;
+    }
+
+    .pencil-box{
+        margin-left: 10px; 
+        padding-left: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content:end;
+    }
+
+    .like{
+        position: absolute;
+        right: 30px;
+        top: 770px;
+        /* margin-right: 0; */
+    }
+
 }

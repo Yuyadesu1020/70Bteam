@@ -49,7 +49,7 @@ body{
 
 .post-title{
     padding-top: 30px;
-    padding-left: 40px;
+    /* padding-left: 40px; */
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 20px;
     font-weight:bolder;
@@ -197,13 +197,19 @@ body{
     }
 
     .card-boxes{
-        width: 55vw;
-        height: 30vh;
+        width: 70vw;
+        height: 40vh;
+    }
+
+    .bodybox{
+        display: flex;
+        justify-content: center;
     }
 
     .posttitle-box{
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
     .post-title{

@@ -51,4 +51,10 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Like');
     }
+
+    //✅コメントモデルとのリレーションの記述
+    public function comments()
+    {
+        return $this -> hasMany('App\Models\Comment');
+    }
 }

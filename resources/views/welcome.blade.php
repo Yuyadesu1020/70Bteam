@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>welcome</title>
+        <title>welcome to Move_on</title>
 
         <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
         <!-- Fonts -->

@@ -111,7 +111,7 @@
                             <div class="select">
                                 <label for="postimage" class="camera-image">📷 : </label>
                                 <input type="file" id="postimage" name="postimage" style="display: none;">
-                                <button class="select-image" id="openDialog">画像を選択</button>
+                                <button class="select-image" id="openDialog">Image</button>
                             </div>
                         </div>
                         {{-- ✅エラー文表示 --}}

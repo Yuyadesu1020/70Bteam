@@ -113,7 +113,7 @@
                         <div class="new-image">
                             <label for="newImage">📷 : </label>
                             <input type="file" id="newImage" name="newImage" style="display: none;">
-                            <button id="openDialog">画像を選択</button>
+                            <button id="openDialog">Image</button>
                         </div>
 
                     <script>

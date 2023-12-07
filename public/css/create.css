@@ -77,20 +77,41 @@ body{
 .form-content{
     text-align: center;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin: 30px 0px 100px 150px; */
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+
+.contentonly{
+    display: flex;
     flex-direction: row;
-    margin: 30px 0px 100px 150px;
+    justify-content: center;
+}
+
+.error-title{
+    margin-bottom: 40px;
+    position: relative;
+    left: 200px;
+    bottom: 5px;
+}
+
+.error-content{
+    position: relative;
+    right: 50px;
 }
 
 textarea{
     border: 1px solid rgb(0,0,0,0.2);
     background-color: white;
-    width: 80%;
+    width: 50vw;
     height: 30vh;
 }
 
 .label-content{
     font-size: 20px;
-    margin-right: 10px;
+    width: 200px;
 }
 
 .post-image{
@@ -162,6 +183,18 @@ textarea{
         height: 100px;
     }
 
+    /* .first-box{
+        padding-bottom: -100px;
+    } */
+
+    .error-title{
+        margin-bottom: -20px;
+        position: relative;
+        left: 30px;
+        bottom: 50px;
+        font-size: 15px;
+    }
+
     .label-title{
         font-size: 15px;
     }
@@ -171,6 +204,11 @@ textarea{
         width: 45vw;
         background-color: white;
     }
+
+    /* .deadline-box{
+        position: relative;
+        bottom: 20px;
+    } */
 
     .dead-letter{
         font-size: 15px;
@@ -184,6 +222,7 @@ textarea{
 
     .label-content{
         font-size: 15px;
+        width: 70px;
     }
 
     .form-content{
@@ -196,6 +235,11 @@ textarea{
 
     .form-area{
         background-color: white;
+    }
+
+    .error-content{
+        position: relative;
+        left: 30px;
     }
 
 

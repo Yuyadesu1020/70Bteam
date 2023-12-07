@@ -72,12 +72,12 @@
                 @csrf
 
                 <div class="title">
-                    <div>
+                    <div class="first-box">
                         <label for="" class="label-title">Schedule : </label>
                         <input type="text" class="title-form" placeholder="Put your title" name="title">
                         {{-- ✅エラー文表示 --}}
-                        @error('body')
-                        <p class="text-red-500" style="color: red;">{{ $message }}</p>
+                        @error('title')
+                        <p class="text-red-500 error-title" style="color: red;">{{ $message }}</p>
                         @enderror
                     </div>
                     {{-- deadlineの記述 --}}
@@ -90,11 +90,13 @@
                 
 
                 <div class="form-content">
-                    <label class="label-content">Content : </label>
-                    <textarea class="form-area" placeholder="Fill your blank" rows="5" name="body"></textarea>
+                    <div  class="contentonly">
+                        <label class="label-content">Content : </label>
+                        <textarea class="form-area" placeholder="Fill your blank" rows="5" name="body"></textarea>
+                    </div>
                     {{-- ✅エラー文表示 --}}
-                    @error('title')
-                    <p class="text-red-500" style="color: red;">{{ $message }}</p>
+                    @error('body')
+                    <p class="text-red-500 error-content" style="color: red;">{{ $message }}</p>
                     @enderror
                 </div>
 
